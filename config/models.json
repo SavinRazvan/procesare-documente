@@ -1,0 +1,790 @@
+{
+  "version": "2.0",
+  "description": "GeoJSON Processor V2 - Model Configuration",
+  "models": {
+    "camereta": {
+      "name": "Technical Cabinet",
+      "layer": "main",
+      "description": "Camereta rooms with location, observations, and table ID",
+      "required_fields": ["ID_TABELA", "LOCALITATE", "OBSERVATII_1", "OBSERVATII_2"],
+      "extract_fields": ["LOCALITATE", "ID_TABELA", "OBSERVATII_1", "OBSERVATII_2", "MI_PRINX"],
+      "field_mappings": {
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "ID_TABELA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "OBSERVATII_1": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 500
+          }
+        },
+        "OBSERVATII_2": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 500
+          }
+        },
+        "MI_PRINX": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "enclosure": {
+      "name": "Technical Enclosure",
+      "layer": "main",
+      "description": "Enclosures with ID, location, and observations",
+      "required_fields": ["ENCLOSURE_ID", "LOCALITATE", "OBSERVATII"],
+      "extract_fields": ["LOCALITATE", "ENCLOSURE_ID", "OBSERVATII"],
+      "field_mappings": {
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "ENCLOSURE_ID": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "OBSERVATII": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 500
+          }
+        }
+      }
+    },
+    "hub": {
+      "name": "Network Hub",
+      "layer": "main",
+      "description": "Hub locations with specific network information",
+      "required_fields": ["NUME", "LOCALITATE", "ADRESA", "COD_FTTB", "OLT", "COMBINER", "SURSA_48V", "AC", "MOTIVE_NEFUNCT_HUB", "FIBRE"],
+      "extract_fields": ["NUME", "LOCALITATE", "ADRESA", "COD_FTTB", "OLT", "COMBINER", "SURSA_48V", "AC", "MOTIVE_NEFUNCT_HUB", "FIBRE"],
+      "field_mappings": {
+        "NUME": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "ADRESA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 5,
+            "max_length": 200
+          }
+        },
+        "COD_FTTB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "OLT": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "COMBINER": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "SURSA_48V": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "AC": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "MOTIVE_NEFUNCT_HUB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 200
+          }
+        },
+        "FIBRE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "localitati": {
+      "name": "Localities",
+      "layer": "main",
+      "description": "Localities with coverage and network statistics",
+      "required_fields": ["NUME", "COMUNA", "NR_CASE", "TIP_RETEA_CASE", "HUB", "NR_PONI", "TIP_PONI", "IMPLEMENTARE_RETEA", "STATIE_CATV", "HP_TOTAL", "SIRUTA", "OBS", "PROIECTANT"],
+      "extract_fields": ["nume", "comuna", "nr_case", "id_city_voice", "MI_PRINX", "SIRUTA", "obs", "PROIECTANT"],
+      "field_mappings": {
+        "nume": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "comuna": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "nr_case": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "id_city_voice": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "MI_PRINX": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "SIRUTA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "obs": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 500
+          }
+        },
+        "PROIECTANT": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        }
+      }
+    },
+    "stalpi": {
+      "name": "Utility Poles",
+      "layer": "main",
+      "description": "Poles with technical specifications, ownership, and infrastructure details",
+      "required_fields": ["LOCALITATE", "COD_FTTB", "DENUMIRE_ART", "NR_ART", "FOLOSIT_RDS", "MATERIAL_CONSTRUCTIV", "TIP_STALP", "PROPRIETAR", "TABELA"],
+      "extract_fields": ["LOCALITATE", "FOLOSIT_RDS", "MATERIAL_CONSTRUCTIV", "TIP_STALP"],
+      "field_mappings": {
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "FOLOSIT_RDS": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "MATERIAL_CONSTRUCTIV": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "TIP_STALP": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "zona_hub": {
+      "name": "Hub Coverage Zone",
+      "layer": "main",
+      "description": "Hub coverage zones with case statistics",
+      "required_fields": ["nume", "nr_case", "nr_case_acoperire", "nr_case_active", "nr_scari", "nr_apt"],
+      "extract_fields": ["nume", "nr_case", "nr_case_acoperire", "nr_case_active", "nr_scari", "nr_apt"],
+      "field_mappings": {
+        "nume": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "nr_case": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "nr_case_acoperire": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "nr_case_active": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "nr_scari": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "nr_apt": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "zone_interventie": {
+      "name": "Intervention Zone",
+      "layer": "main",
+      "description": "Intervention zones with specific fields",
+      "required_fields": ["JUDET", "LOCALITATE", "ZONA", "ECHIPA", "TIP_ECHIPA", "MI_PRINX", "DIGI_ID"],
+      "extract_fields": ["LOCALITATE", "ZONA", "ECHIPA", "TIP_ECHIPA"],
+      "field_mappings": {
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "ZONA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "ECHIPA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "TIP_ECHIPA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "case": {
+      "name": "Residential Building",
+      "layer": "main",
+      "description": "Case data with complete network, equipment, building information, and coverage fields",
+      "required_fields": ["COD_FTTB", "DENUMIRE_ART", "NR_ART", "STARE_RETEA", "ZONA_RETEA", "TIP_ECHIPAMENT"],
+      "extract_fields": ["COD_FTTB", "LOCALITATE", "TIP_ART", "DENUMIRE_ART", "NR_ART", "STARE_RETEA", "ZONA_RETEA", "TIP_ECHIPAMENT", "OBSERVATII"],
+      "field_mappings": {
+        "COD_FTTB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "DENUMIRE_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "NR_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "STARE_RETEA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "ZONA_RETEA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "TIP_ECHIPAMENT": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "TIP_ART": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "OBSERVATII": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 500
+          }
+        }
+      }
+    },
+    "spliter": {
+      "name": "Signal Splitter",
+      "layer": "main",
+      "description": "Spliter data with type only",
+      "required_fields": ["TIP_SPLITER"],
+      "extract_fields": ["TIP_SPLITER"],
+      "field_mappings": {
+        "TIP_SPLITER": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "zona_pon": {
+      "name": "PON Zone",
+      "layer": "main",
+      "description": "Zona PON data with specific fields",
+      "required_fields": ["MI_PRINX", "NR_ABONATI", "OBSERVATII", "PON"],
+      "extract_fields": ["PON", "OBSERVATII"],
+      "field_mappings": {
+        "PON": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^PON-[A-Z0-9_-]+$"
+          }
+        },
+        "OBSERVATII": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 500
+          }
+        }
+      }
+    },
+    "zona_spliter": {
+      "name": "Splitter Zone",
+      "layer": "main",
+      "description": "Zona SP data with zone ID and PON",
+      "required_fields": ["ID_ZONA", "PON"],
+      "extract_fields": ["ID_ZONA"],
+      "field_mappings": {
+        "ID_ZONA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        }
+      }
+    },
+    "fibra": {
+      "name": "Fiber Optic",
+      "layer": "main",
+      "description": "Fiber optic data with technical specifications and measurements",
+      "required_fields": ["NR_FIRE", "LUNGIME_HARTA", "LUNGIME_ESTIMATA", "TIP_CABLU", "LUNGIME_TEREN", "LUNGIME_OPTICA", "AMPLASARE", "LOCALITATE"],
+      "extract_fields": ["NR_FIRE", "LUNGIME_HARTA", "LUNGIME_TEREN", "AMPLASARE", "LOCALITATE"],
+      "field_mappings": {
+        "NR_FIRE": {
+          "type": "integer",
+          "required": true,
+          "validation": {
+            "min_value": 1
+          }
+        },
+        "LUNGIME_HARTA": {
+          "type": "number",
+          "required": true,
+          "validation": {
+            "min_value": 0
+          }
+        },
+        "LUNGIME_TEREN": {
+          "type": "number",
+          "required": true,
+          "validation": {
+            "min_value": 0
+          }
+        },
+        "AMPLASARE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        }
+      }
+    },
+    "scari": {
+      "name": "Staircases",
+      "layer": "main",
+      "description": "Staircase data with basic identification fields",
+      "required_fields": ["COD_FTTB", "TIP_ART", "DENUMIRE_ART", "NR_ART", "DENUMIRE_BLOC", "NR_SCARA"],
+      "extract_fields": ["COD_FTTB", "TIP_ART", "DENUMIRE_ART", "NR_ART", "DENUMIRE_BLOC", "NR_SCARA", "TIP_RETEA", "ZONA_RETEA", "OBSERVATII", "ZONA_RETEA_FTTH1000", "ZONA_RETEA_FTTH_V2", "LOCALITATE"],
+      "field_mappings": {
+        "COD_FTTB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "TIP_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "DENUMIRE_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "NR_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "DENUMIRE_BLOC": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "NR_SCARA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "TIP_RETEA": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "ZONA_RETEA": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "OBSERVATII": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 500
+          }
+        },
+        "ZONA_RETEA_FTTH1000": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "ZONA_RETEA_FTTH_V2": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        }
+      }
+    },
+    "zona_pon_re_ftth1000": {
+      "name": "PON Zone RE FTTH1000",
+      "layer": "main",
+      "description": "PON zone with RE FTTH1000 technology and subscriber information",
+      "required_fields": ["PON", "NR_ABONATI", "OLT", "TIP_PROIECT"],
+      "extract_fields": ["PON", "OLT", "HOTLINK"],
+      "field_mappings": {
+        "PON": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^PON-[A-Z0-9_-]+$"
+          }
+        },
+        "OLT": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^OLT-[A-Z0-9_-]+$"
+          }
+        },
+        "HOTLINK": {
+          "type": "string",
+          "required": false,
+          "validation": {
+            "max_length": 50
+          }
+        }
+      }
+    },
+    "fttb_search": {
+      "name": "FTTB Search",
+      "layer": "search",
+      "description": "Search model for COD_FTTB and LOCALITATE combinations - used for search operations only",
+      "required_fields": ["COD_FTTB", "TIP_ART", "LOCALITATE"],
+      "extract_fields": ["COD_FTTB", "LOCALITATE"],
+      "field_mappings": {
+        "COD_FTTB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        }
+      }
+    },
+    "scari_search": {
+      "name": "Scari Search",
+      "layer": "search",
+      "description": "Search model for staircase data with comprehensive field set",
+      "required_fields": ["COD_FTTB", "TIP_ART", "DENUMIRE_ART", "NR_ART", "DENUMIRE_BLOC", "NR_SCARA", "LOCALITATE"],
+      "extract_fields": ["COD_FTTB", "TIP_ART", "DENUMIRE_ART", "NR_ART", "DENUMIRE_BLOC", "NR_SCARA", "LOCALITATE"],
+      "field_mappings": {
+        "COD_FTTB": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "TIP_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "DENUMIRE_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "NR_ART": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "DENUMIRE_BLOC": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 100
+          }
+        },
+        "NR_SCARA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        }
+      }
+    },
+    "camereta_search": {
+      "name": "Camereta Search",
+      "layer": "search",
+      "description": "Search model for camereta with LOCALITATE and ID_TABELA",
+      "required_fields": ["LOCALITATE", "ID_TABELA", "TIP_CAMERETA", "DIGI_ID"],
+      "extract_fields": ["LOCALITATE", "ID_TABELA"],
+      "field_mappings": {
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        },
+        "ID_TABELA": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        }
+      }
+    },
+    "enclosure_search": {
+      "name": "Enclosure Search",
+      "layer": "search",
+      "description": "Search model for enclosure with ENCLOSURE_ID and LOCALITATE",
+      "required_fields": ["ENCLOSURE_ID", "LOCALITATE"],
+      "extract_fields": ["ENCLOSURE_ID", "LOCALITATE"],
+      "field_mappings": {
+        "ENCLOSURE_ID": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "pattern": "^[A-Z0-9_-]+$"
+          }
+        },
+        "LOCALITATE": {
+          "type": "string",
+          "required": true,
+          "validation": {
+            "min_length": 2,
+            "max_length": 100
+          }
+        }
+      }
+    }
+  }
+}

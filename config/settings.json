@@ -1,0 +1,47 @@
+{
+  "version": "2.0",
+  "description": "GeoJSON Processor V2 - Global Settings",
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S",
+    "console_output": true,
+    "file_output": true,
+    "log_directory": "logs",
+    "max_file_size": "10MB",
+    "backup_count": 5
+  },
+  "processing": {
+    "enable_duplicate_detection": true,
+    "enable_validation": true,
+    "enable_statistics": false,
+    "batch_size": 1000,
+    "max_workers": 4,
+    "timeout_seconds": 300
+  },
+  "validation": {
+    "strict_mode": false,
+    "skip_invalid_files": true,
+    "log_validation_errors": true,
+    "custom_validators": []
+  },
+  "output": {
+    "preserve_structure": true,
+    "create_centralized": true,
+    "include_metadata": false,
+    "include_statistics": false,
+    "compression": false
+  },
+  "plugins": {
+    "enabled": true,
+    "plugin_directory": "src/plugins",
+    "auto_discover": true,
+    "load_on_demand": true
+  },
+  "performance": {
+    "enable_caching": true,
+    "cache_size": 1000,
+    "memory_limit": "1GB",
+    "enable_profiling": false
+  }
+}

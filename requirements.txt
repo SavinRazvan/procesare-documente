@@ -1,0 +1,27 @@
+# GeoJSON Processor V2 - Requirements
+# ===================================
+# 
+# This project uses only Python standard library modules.
+# No external dependencies are required.
+#
+# Author: Savin Ionut Razvan
+# Version: 2025.10.05
+# Python: 3.11+
+
+# Standard library modules used:
+# - json (JSON processing)
+# - sys (System-specific parameters)
+# - pathlib (Object-oriented filesystem paths)
+# - typing (Type hints)
+# - dataclasses (Data classes)
+# - datetime (Date and time utilities)
+# - logging (Logging facility)
+# - re (Regular expressions)
+# - enum (Enumerations)
+# - time (Time-related functions)
+# - hashlib (Hash algorithms)
+# - argparse (Command-line argument parsing)
+# - subprocess (Subprocess management)
+
+# No external packages required!
+# All functionality is built using Python standard library.

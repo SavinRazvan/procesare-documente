@@ -124,13 +124,13 @@ This document provides an accurate representation of the current field configura
 **Output:** Centralized file only
 
 #### **Current Output Headers (After Processing):**
-- `nume` - Name (required, 2-100 chars)
-- `comuna` - Commune (required, 2-100 chars)
-- `nr_case` - Number of houses (required, max 50 chars)
-- `id_city_voice` - City voice ID (required, max 50 chars)
+- `NUME` - Name (required, 2-100 chars)
+- `COMUNA` - Commune (required, 2-100 chars)
+- `NR_CASE` - Number of houses (required, max 50 chars)
+- `ID_CITY_VOICE` - City voice ID (required, max 50 chars)
 - `MI_PRINX` - MapInfo index (required, max 50 chars)
 - `SIRUTA` - SIRUTA code (required, max 100 chars)
-- `obs` - Observations (required, max 500 chars)
+- `OBS` - Observations (required, max 500 chars)
 - `PROIECTANT` - Designer (required, max 100 chars)
 
 **Output Files:**
@@ -189,12 +189,12 @@ This document provides an accurate representation of the current field configura
 **Output:** Centralized file only
 
 #### **Current Output Headers (After Processing):**
-- `nume` - Name (required, 2-100 chars)
-- `nr_case` - Number of houses (required, max 50 chars)
-- `nr_case_acoperire` - Number of houses covered (required, max 50 chars)
-- `nr_case_active` - Number of active houses (required, max 50 chars)
-- `nr_scari` - Number of stairs (required, max 50 chars)
-- `nr_apt` - Number of apartments (required, max 50 chars)
+- `NUME` - Name (required, 2-100 chars)
+- `NR_CASE` - Number of houses (required, max 50 chars)
+- `NR_CASE_ACOPERIRE` - Number of houses covered (required, max 50 chars)
+- `NR_CASE_ACTIVE` - Number of active houses (required, max 50 chars)
+- `NR_SCARI` - Number of stairs (required, max 50 chars)
+- `NR_APT` - Number of apartments (required, max 50 chars)
 
 **Output Files:**
 - Centralized file: `_output/zona_hub_centralized.geojson`

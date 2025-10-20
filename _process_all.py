@@ -31,7 +31,7 @@ class ProcessingResult:
 
 class MasterProcessor:
     """
-    Master processor that orchestrates all individual model processors
+    Master processor that orchestrates all specialized model processors
     """
     
     def __init__(self, enable_duplicate_detection: bool = True):

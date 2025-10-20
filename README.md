@@ -1,6 +1,6 @@
 # Procesor GeoJSON V2
 
-> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare ieșire centralizată.
+> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare rezultate centralizate.
 
 ## 🚀 Pornire Rapidă
 
@@ -18,23 +18,23 @@ python3 _process_all.py _input _output
 
 ## 📋 Funcționalități
 
-- **23 Procesori Individuali**: Gestionează tipuri specifice de modele
-- **Procesor Principal**: Orchestrează toți procesorii individuali
+- **23 Procesori Specializați**: Gestionează tipuri specifice de modele
+- **Procesor Principal**: Orchestrează toți procesorii specializați
 - **Configurare prin JSON**: Definiții de modele bazate pe fișiere JSON
 - **Logging Profesional**: Gestionare comprehensivă a erorilor și monitorizare
 - **Fără Dependențe Externe**: Doar biblioteca standard Python
-- **Ieșire Centralizată**: Rezultate de procesare unificate
+- **Rezultate Centralizate**: Date procesate unificate
 
 ## 📁 Structura Proiectului
 
 ```
 procesare-documente/
-├── _input/                    # Fișiere GeoJSON de intrare
-├── _output/                   # Fișiere procesate de ieșire
+├── _input/                    # Fișiere GeoJSON sursă
+├── _output/                   # Fișiere rezultat procesare
 ├── config/                    # Fișiere de configurare
 ├── src/                       # Motor de procesare principal
 ├── _process_all.py            # Procesor principal
-├── _[model].py               # Procesori individuali (23 fișiere)
+├── _[model].py               # Procesori specializați (23 fișiere)
 └── README.md                  # Acest fișier
 ```
 
@@ -72,7 +72,7 @@ python3 _process_all.py _input _output --models camereta case
 # Procesare fără detectare duplicat
 python3 _process_all.py _input _output --no-duplicates
 
-# Procesor individual
+# Procesor specializat
 python3 _camereta.py _input _output
 ```
 
@@ -86,7 +86,7 @@ python3 _camereta.py _input _output
 ## 🛠️ Dezvoltare
 
 ```bash
-# Testare procesor individual
+# Testare procesor specializat
 python3 _camereta.py _input _output
 
 # Testare procesor principal
@@ -101,8 +101,8 @@ python3 _process_all.py --help
 Pentru probleme sau întrebări:
 1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare
 2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri
-3. Verifică ieșirea consolei pentru mesaje de eroare
-4. Verifică formatele fișierelor de intrare și denumirile
+3. Verifică rezultatele consolei pentru mesaje de eroare
+4. Verifică formatele fișierelor sursă și denumirile
 
 ---
 

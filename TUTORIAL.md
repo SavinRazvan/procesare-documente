@@ -40,26 +40,26 @@ Acest ghid acoperă utilizarea sistemului Procesor GeoJSON V2 pentru procesarea 
 
 ### Cerințe Preliminare
 - **Python**: 3.11+ (recomandat: 3.11.13)
-- **Conda**: Pentru managementul mediilor
+- **Conda**: Pentru managementul mediilor de execuție
 - **Sistem de Operare**: Linux (testat pe WSL2)
 
-### Configurarea Mediului
+### Configurarea Mediului de Execuție
 
-#### 1. Creează Mediul Conda
+#### 1. Creează Mediu de Execuție Conda
 ```bash
-# Creează mediul nou (dacă nu există)
+# Creează mediu de execuție nou (dacă nu există)
 conda create -n .proc_doc python=3.11 -y
 
-# Verifică mediile disponibile
+# Verifică mediile de execuție disponibile
 conda env list
 ```
 
-#### 2. Activează Mediul
+#### 2. Activează Mediu de Execuție
 ```bash
-# Activează mediul conda
+# Activează mediu de execuție conda
 conda activate .proc_doc
 
-# Verifică că mediul este activ (ar trebui să vezi * lângă .proc_doc)
+# Verifică că mediu de execuție este activ (ar trebui să vezi * lângă .proc_doc)
 conda info --envs
 ```
 
@@ -324,11 +324,11 @@ python3 _process_all.py _input _output --models camereta case --no-duplicates
 
 ## 🔧 Configurare
 
-### Managementul Mediului
+### Managementul Mediului de Execuție
 
-#### Verificarea Mediului
+#### Verificarea Mediului de Execuție de Execuție
 ```bash
-# Verifică mediul activ
+# Verifică mediu de execuție activ
 conda info --envs
 # Ar trebui să vezi * lângă .proc_doc
 
@@ -341,18 +341,18 @@ cat requirements.txt
 # Arată că se folosesc doar module din biblioteca standard
 ```
 
-#### Recrearea Mediului (dacă este necesar)
+#### Recrearea Mediului de Execuție (dacă este necesar)
 ```bash
-# Dezactivează mediul curent
+# Dezactivează mediu de execuție curent
 conda deactivate
 
-# Șterge mediul vechi (dacă există probleme)
+# Șterge mediu de execuție vechi (dacă există probleme)
 conda env remove -n .proc_doc -y
 
-# Creează mediul nou
+# Creează mediu de execuție nou
 conda create -n .proc_doc python=3.11 -y
 
-# Activează mediul
+# Activează mediu de execuție
 conda activate .proc_doc
 ```
 
@@ -395,27 +395,27 @@ python3 _camereta_search.py _input _output
 
 ## 🐛 Rezolvarea Problemelor
 
-### Probleme de Mediu
+### Probleme de Mediu de Execuție
 
-#### 1. Mediul Conda Nu Este Activ
+#### 1. Mediu de Execuție Conda Nu Este Activ
 ```bash
-# Verifică mediile disponibile
+# Verifică mediile de execuție disponibile
 conda env list
 
-# Activează mediul (ar trebui să vezi * lângă .proc_doc)
+# Activează mediu de execuție (ar trebui să vezi * lângă .proc_doc)
 conda activate .proc_doc
 
-# Verifică că mediul este activ
+# Verifică că mediu de execuție este activ
 echo $CONDA_DEFAULT_ENV
 # Ar trebui să afișeze: .proc_doc
 ```
 
-#### 2. Mediul Nu Există
+#### 2. Mediu de Execuție Nu Există
 ```bash
-# Creează mediul dacă nu există
+# Creează mediu de execuție dacă nu există
 conda create -n .proc_doc python=3.11 -y
 
-# Activează mediul
+# Activează mediu de execuție
 conda activate .proc_doc
 ```
 
@@ -535,9 +535,9 @@ procesare-documente/
 
 ## 🎉 Indicatori de Succes
 
-### Verificarea Mediului
+### Verificarea Mediului de Execuție
 ```bash
-# Verifică că mediul este activ
+# Verifică că mediu de execuție este activ
 conda info --envs
 # Ar trebui să vezi * lângă .proc_doc
 

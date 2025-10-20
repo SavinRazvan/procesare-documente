@@ -1,6 +1,6 @@
 # Procesor GeoJSON V2
 
-> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare output centralizat.
+> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare ieșire centralizată.
 
 ## 🚀 Pornire Rapidă
 
@@ -20,10 +20,10 @@ python3 _process_all.py _input _output
 
 - **23 Procesori Individuali**: Gestionează tipuri specifice de modele
 - **Procesor Principal**: Orchestrează toți procesorii individuali
-- **Configurare prin JSON**: Definiții de modele bazate pe JSON
-- **Logging Profesional**: Gestionare comprehensivă a erorilor
+- **Configurare prin JSON**: Definiții de modele bazate pe fișiere JSON
+- **Logging Profesional**: Gestionare comprehensivă a erorilor și monitorizare
 - **Fără Dependențe Externe**: Doar biblioteca standard Python
-- **Output Centralizat**: Rezultate de procesare unificate
+- **Ieșire Centralizată**: Rezultate de procesare unificate
 
 ## 📁 Structura Proiectului
 
@@ -44,7 +44,7 @@ procesare-documente/
 
 - **[TUTORIAL.md](TUTORIAL.md)** - Ghid complet utilizator cu instrucțiuni de configurare
 - **[doc_input_headers.md](doc_input_headers.md)** - Specificații câmpuri și referință tehnică
-- **[requirements.txt](requirements.txt)** - Informații dependențe
+- **[requirements.txt](requirements.txt)** - Informații despre dependențe
 
 ## 🔧 Cerințe
 
@@ -80,7 +80,7 @@ python3 _camereta.py _input _output
 
 - **Ușor**: Fără dependențe externe
 - **Rapid**: Optimizat pentru seturi mari de date
-- **Eficient Memorie**: Procesare în flux
+- **Eficient la Memorie**: Procesare în flux
 - **Scalabil**: Gestionează mii de entități
 
 ## 🛠️ Dezvoltare
@@ -101,10 +101,10 @@ python3 _process_all.py --help
 Pentru probleme sau întrebări:
 1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare
 2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri
-3. Verifică output-ul consolei pentru mesaje de eroare
+3. Verifică ieșirea consolei pentru mesaje de eroare
 4. Verifică formatele fișierelor de intrare și denumirile
 
 ---
 
 **Autor**: Savin Ionut Razvan  
-**Versiunea**: 2025.10.05  
+**Versiune**: 2025.10.05  

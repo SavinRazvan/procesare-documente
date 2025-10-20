@@ -524,12 +524,23 @@ procesare-documente/
 │   │   └── manifest.json            # Manifest cu lista fișierelor
 │   ├── *_centralized.geojson         # Fișiere centralizate (majoritatea modelelor)
 │   └── *_search.geojson             # Fișiere de căutare
-├── config/
+├── config/                          # Configurații sistem
 │   ├── models.json                  # Configurația modelelor (18 modele)
 │   └── settings.json                # Setările de procesare
 ├── src/                             # Motorul de procesare principal
+│   ├── core/                        # Componente principale
+│   │   ├── engine.py                # Motor de procesare
+│   │   └── model_manager.py         # Manager modele
+│   └── utils/                       # Utilitare sistem
+│       ├── data_integrity.py        # Validare date
+│       ├── exceptions.py            # Excepții personalizate
+│       └── logger.py                # Sistem logging
+├── logs/                            # Fișiere log sistem
 ├── _process_all.py                  # Procesorul principal
 ├── _[model].py                      # Procesoare specializate (18 procesoare)
+├── doc_input_headers.md             # Documentație câmpuri
+├── requirements.txt                 # Dependențe sistem
+├── README.md                        # Documentație principală
 └── TUTORIAL.md                      # Acest tutorial
 ```
 

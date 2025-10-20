@@ -1,14 +1,14 @@
-# Input Data Headers - Documentation
+# Documentație Câmpuri Date Sursă
 
-This document provides an accurate representation of the current field configurations and output headers for each processor model, based on the actual `config/models.json` configuration and current system behavior.
+Acest document oferă o reprezentare precisă a configurațiilor curente de câmpuri și anteturi de ieșire pentru fiecare model de procesor, bazată pe configurația actuală `config/models.json` și comportamentul curent al sistemului.
 
-**Last Updated:** 2025.10.05  
-**Author:** Savin Ionut Razvan  
-**Version:** 2.0
+**Ultima Actualizare:** 2025.10.05  
+**Autor:** Savin Ionut Razvan  
+**Versiune:** 2.0
 
-## Table of Contents
+## Cuprins
 
-### A) Main Layers (Individual Processors)
+### A) Straturi Principale (Procesori Specializați)
 1. [Case](#case)
 2. [Camereta](#camereta)
 3. [Enclosure](#enclosure)
@@ -24,7 +24,7 @@ This document provides an accurate representation of the current field configura
 13. [Zona Pon RE FTTH1000](#zona-pon-re-ftth1000)
 14. [Zona Spliter](#zona-spliter)
 
-### B) Search Layers (Search Processors)
+### B) Straturi de Căutare (Procesori de Căutare)
 1. [FTTB Search](#fttb-search)
 2. [Enclosure Search](#enclosure-search)
 3. [Camereta Search](#camereta-search)
@@ -32,339 +32,338 @@ This document provides an accurate representation of the current field configura
 
 ---
 
-## A) Main Layers
+## A) Straturi Principale
 
 ### Case
-**Processor:** `_case.py`  
-**Source Files:** Files containing `CASE_` in filename  
-**Output:** Individual files + Centralized file
+**Procesor:** `_case.py`  
+**Fișiere Sursă:** Fișiere care conțin `CASE_` în nume  
+**Rezultat:** Fișiere individuale + Fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `COD_FTTB` - FTTB Code (required, pattern: ^[A-Z0-9_-]+$)
-- `LOCALITATE` - Locality (optional, 2-100 chars)
-- `TIP_ART` - Article Type (optional, max 50 chars)
-- `DENUMIRE_ART` - Article Name (required, 2-100 chars)
-- `NR_ART` - Article Number (required, max 50 chars)
-- `STARE_RETEA` - Network Status (required, max 50 chars)
-- `ZONA_RETEA` - Network Zone (required, max 50 chars)
-- `TIP_ECHIPAMENT` - Equipment Type (required, max 50 chars)
-- `OBSERVATII` - Observations (optional, max 500 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `COD_FTTB` - Cod FTTB (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `LOCALITATE` - Localitate (opțional, 2-100 caractere)
+- `TIP_ART` - Tip Articol (opțional, max 50 caractere)
+- `DENUMIRE_ART` - Denumire Articol (obligatoriu, 2-100 caractere)
+- `NR_ART` - Număr Articol (obligatoriu, max 50 caractere)
+- `STARE_RETEA` - Stare Rețea (obligatoriu, max 50 caractere)
+- `ZONA_RETEA` - Zonă Rețea (obligatoriu, max 50 caractere)
+- `TIP_ECHIPAMENT` - Tip Echipament (obligatoriu, max 50 caractere)
+- `OBSERVATII` - Observații (opțional, max 500 caractere)
 
-**Output Files:**
-- Individual files: `_output/case/CASE_*.geojson` (compact format)
-- Centralized file: `_output/case_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișiere individuale: `_output/case/CASE_*.geojson` (format compact)
+- Fișier centralizat: `_output/case_centralized.geojson`
 - Manifest: `_output/case/manifest.json`
 
 ### Camereta
-**Processor:** `_camereta.py`  
-**Source Files:** Files containing `CAMERETA_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_camereta.py`  
+**Fișiere Sursă:** Fișiere care conțin `CAMERETA_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `ID_TABELA` - Table ID (required, pattern: ^[A-Z0-9_-]+$)
-- `OBSERVATII_1` - Observations 1 (required, max 500 chars)
-- `OBSERVATII_2` - Observations 2 (required, max 500 chars)
-- `MI_PRINX` - MapInfo index (optional, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `ID_TABELA` - ID Tabelă (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `OBSERVATII_1` - Observații 1 (obligatoriu, max 500 caractere)
+- `OBSERVATII_2` - Observații 2 (obligatoriu, max 500 caractere)
+- `MI_PRINX` - Index MapInfo (opțional, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/camereta_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/camereta_centralized.geojson`
 
 ### Enclosure
-**Processor:** `_enclosure.py`  
-**Source Files:** Files containing `ENCLOSURE_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_enclosure.py`  
+**Fișiere Sursă:** Fișiere care conțin `ENCLOSURE_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `ENCLOSURE_ID` - Enclosure ID (required, pattern: ^[A-Z0-9_-]+$)
-- `OBSERVATII` - Observations (required, max 500 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `ENCLOSURE_ID` - ID Enclosure (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `OBSERVATII` - Observații (obligatoriu, max 500 caractere)
 
-**Output Files:**
-- Centralized file: `_output/enclosure_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/enclosure_centralized.geojson`
 
 ### Fibra
-**Processor:** `_fibra.py`  
-**Source Files:** Files containing `FO_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_fibra.py`  
+**Fișiere Sursă:** Fișiere care conțin `FO_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `NR_FIRE` - Number of fibers (required, integer, min 1)
-- `LUNGIME_HARTA` - Map length (required, number, min 0)
-- `LUNGIME_TEREN` - Terrain length (required, number, min 0)
-- `AMPLASARE` - Placement (required, max 100 chars)
-- `LOCALITATE` - Locality (required, 2-100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `NR_FIRE` - Număr Fire (obligatoriu, întreg, min 1)
+- `LUNGIME_HARTA` - Lungime Hartă (obligatoriu, număr, min 0)
+- `LUNGIME_TEREN` - Lungime Teren (obligatoriu, număr, min 0)
+- `AMPLASARE` - Amplasare (obligatoriu, max 100 caractere)
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/fibra_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/fibra_centralized.geojson`
 
 ### Hub
-**Processor:** `_hub.py`  
-**Source Files:** Files containing `HUB_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_hub.py`  
+**Fișiere Sursă:** Fișiere care conțin `HUB_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `NUME` - Name (required, 2-100 chars)
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `ADRESA` - Address (required, 2-200 chars)
-- `COD_FTTB` - FTTB Code (required, pattern: ^[A-Z0-9_-]+$)
-- `OLT` - OLT (required, max 50 chars)
-- `COMBINER` - Combiner (required, max 50 chars)
-- `SURSA_48V` - 48V Source (required, max 50 chars)
-- `AC` - AC (required, max 50 chars)
-- `MOTIVE_NEFUNCT_HUB` - Hub Malfunction Reasons (required, max 200 chars)
-- `FIBRE` - Fibers (required, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `NUME` - Nume (obligatoriu, 2-100 caractere)
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `ADRESA` - Adresă (obligatoriu, 2-200 caractere)
+- `COD_FTTB` - Cod FTTB (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `OLT` - OLT (obligatoriu, max 50 caractere)
+- `COMBINER` - Combiner (obligatoriu, max 50 caractere)
+- `SURSA_48V` - Sursă 48V (obligatoriu, max 50 caractere)
+- `AC` - AC (obligatoriu, max 50 caractere)
+- `MOTIVE_NEFUNCT_HUB` - Motive Nefuncționare Hub (obligatoriu, max 200 caractere)
+- `FIBRE` - Fire (obligatoriu, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/hub_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/hub_centralized.geojson`
 
 ### Localitati
-**Processor:** `_localitati.py`  
-**Source Files:** Files containing `LOCALITATI_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_localitati.py`  
+**Fișiere Sursă:** Fișiere care conțin `LOCALITATI_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `NUME` - Name (required, 2-100 chars)
-- `COMUNA` - Commune (required, 2-100 chars)
-- `NR_CASE` - Number of houses (required, max 50 chars)
-- `ID_CITY_VOICE` - City voice ID (required, max 50 chars)
-- `MI_PRINX` - MapInfo index (required, max 50 chars)
-- `SIRUTA` - SIRUTA code (required, max 100 chars)
-- `OBS` - Observations (required, max 500 chars)
-- `PROIECTANT` - Designer (required, max 100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `NUME` - Nume (obligatoriu, 2-100 caractere)
+- `COMUNA` - Comună (obligatoriu, 2-100 caractere)
+- `NR_CASE` - Număr Case (obligatoriu, max 50 caractere)
+- `ID_CITY_VOICE` - ID City Voice (obligatoriu, max 50 caractere)
+- `MI_PRINX` - Index MapInfo (obligatoriu, max 50 caractere)
+- `SIRUTA` - Cod SIRUTA (obligatoriu, max 100 caractere)
+- `OBS` - Observații (obligatoriu, max 500 caractere)
+- `PROIECTANT` - Proiectant (obligatoriu, max 100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/localitati_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/localitati_centralized.geojson`
 
 ### Scari
-**Processor:** `_scari.py`  
-**Source Files:** Files containing `SCARI_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_scari.py`  
+**Fișiere Sursă:** Fișiere care conțin `SCARI_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `COD_FTTB` - FTTB Code (required, pattern: ^[A-Z0-9_-]+$)
-- `TIP_ART` - Article Type (required, max 50 chars)
-- `DENUMIRE_ART` - Article Name (required, 2-100 chars)
-- `NR_ART` - Article Number (required, max 50 chars)
-- `DENUMIRE_BLOC` - Block Name (required, max 100 chars)
-- `NR_SCARA` - Stair Number (required, max 50 chars)
-- `TIP_RETEA` - Network Type (optional, max 50 chars)
-- `ZONA_RETEA` - Network Zone (optional, max 50 chars)
-- `OBSERVATII` - Observations (optional, max 500 chars)
-- `ZONA_RETEA_FTTH1000` - FTTH1000 Network Zone (optional, max 50 chars)
-- `ZONA_RETEA_FTTH_V2` - FTTH V2 Network Zone (optional, max 50 chars)
-- `LOCALITATE` - Locality (optional, 2-100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `COD_FTTB` - Cod FTTB (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `TIP_ART` - Tip Articol (obligatoriu, max 50 caractere)
+- `DENUMIRE_ART` - Denumire Articol (obligatoriu, 2-100 caractere)
+- `NR_ART` - Număr Articol (obligatoriu, max 50 caractere)
+- `DENUMIRE_BLOC` - Denumire Bloc (obligatoriu, max 100 caractere)
+- `NR_SCARA` - Număr Scară (obligatoriu, max 50 caractere)
+- `TIP_RETEA` - Tip Rețea (opțional, max 50 caractere)
+- `ZONA_RETEA` - Zonă Rețea (opțional, max 50 caractere)
+- `OBSERVATII` - Observații (opțional, max 500 caractere)
+- `ZONA_RETEA_FTTH1000` - Zonă Rețea FTTH1000 (opțional, max 50 caractere)
+- `ZONA_RETEA_FTTH_V2` - Zonă Rețea FTTH V2 (opțional, max 50 caractere)
+- `LOCALITATE` - Localitate (opțional, 2-100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/scari_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/scari_centralized.geojson`
 
 ### Spliter
-**Processor:** `_spliter.py`  
-**Source Files:** Files containing `SPLITER_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_spliter.py`  
+**Fișiere Sursă:** Fișiere care conțin `SPLITER_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `TIP_SPLITER` - Splitter Type (required, max 50 chars)
-- `NR_SPLITERE` - Number of Splitters (optional, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `TIP_SPLITER` - Tip Splitter (obligatoriu, max 50 caractere)
+- `NR_SPLITERE` - Număr Splitere (opțional, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/spliter_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/spliter_centralized.geojson`
 
 ### Stalpi
-**Processor:** `_stalpi.py`  
-**Source Files:** Files containing `STALPI_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_stalpi.py`  
+**Fișiere Sursă:** Fișiere care conțin `STALPI_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `FOLOSIT_RDS` - RDS Usage (required, max 50 chars)
-- `MATERIAL_CONSTRUCTIV` - Construction Material (required, max 50 chars)
-- `TIP_STALP` - Pole Type (required, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `FOLOSIT_RDS` - Folosit RDS (obligatoriu, max 50 caractere)
+- `MATERIAL_CONSTRUCTIV` - Material Constructiv (obligatoriu, max 50 caractere)
+- `TIP_STALP` - Tip Stâlp (obligatoriu, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/stalpi_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/stalpi_centralized.geojson`
 
 ### Zona Hub
-**Processor:** `_zona_hub.py`  
-**Source Files:** Files containing `ZONA_ACOPERIRE_HUB_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_zona_hub.py`  
+**Fișiere Sursă:** Fișiere care conțin `ZONA_ACOPERIRE_HUB_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `NUME` - Name (required, 2-100 chars)
-- `NR_CASE` - Number of houses (required, max 50 chars)
-- `NR_CASE_ACOPERIRE` - Number of houses covered (required, max 50 chars)
-- `NR_CASE_ACTIVE` - Number of active houses (required, max 50 chars)
-- `NR_SCARI` - Number of stairs (required, max 50 chars)
-- `NR_APT` - Number of apartments (required, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `NUME` - Nume (obligatoriu, 2-100 caractere)
+- `NR_CASE` - Număr Case (obligatoriu, max 50 caractere)
+- `NR_CASE_ACOPERIRE` - Număr Case Acoperire (obligatoriu, max 50 caractere)
+- `NR_CASE_ACTIVE` - Număr Case Active (obligatoriu, max 50 caractere)
+- `NR_SCARI` - Număr Scări (obligatoriu, max 50 caractere)
+- `NR_APT` - Număr Apartamente (obligatoriu, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/zona_hub_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/zona_hub_centralized.geojson`
 
 ### Zona Interventie
-**Processor:** `_zone_interventie.py`  
-**Source Files:** Files containing `ZONA_` or `ZONE_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_zone_interventie.py`  
+**Fișiere Sursă:** Fișiere care conțin `ZONA_` sau `ZONE_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `ZONA` - Zone (required, max 50 chars)
-- `ECHIPA` - Team (required, max 50 chars)
-- `TIP_ECHIPA` - Team type (required, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `ZONA` - Zonă (obligatoriu, max 50 caractere)
+- `ECHIPA` - Echipă (obligatoriu, max 50 caractere)
+- `TIP_ECHIPA` - Tip Echipă (obligatoriu, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/zone_interventie_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/zone_interventie_centralized.geojson`
 
 ### Zona Pon
-**Processor:** `_zona_pon.py`  
-**Source Files:** Files containing `ZONA_PON_REALIZAT_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_zona_pon.py`  
+**Fișiere Sursă:** Fișiere care conțin `ZONA_PON_REALIZAT_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `PON` - PON identifier (required, pattern: ^PON-[A-Z0-9_-]+$)
-- `OBSERVATII` - Observations (required, max 500 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `PON` - Identificator PON (obligatoriu, pattern: ^PON-[A-Z0-9_-]+$)
+- `OBSERVATII` - Observații (obligatoriu, max 500 caractere)
 
-**Output Files:**
-- Centralized file: `_output/zona_pon_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/zona_pon_centralized.geojson`
 
 ### Zona Pon RE FTTH1000
-**Processor:** `_zona_pon_re_ftth1000.py`  
-**Source Files:** Files containing `ZONA_PON_RE_FTTH1000_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_zona_pon_re_ftth1000.py`  
+**Fișiere Sursă:** Fișiere care conțin `ZONA_PON_RE_FTTH1000_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `PON` - PON identifier (required, pattern: ^PON-[A-Z0-9_-]+$)
-- `OLT` - OLT identifier (required, pattern: ^OLT-[A-Z0-9_-]+$)
-- `HOTLINK` - HotLink (optional, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `PON` - Identificator PON (obligatoriu, pattern: ^PON-[A-Z0-9_-]+$)
+- `OLT` - Identificator OLT (obligatoriu, pattern: ^OLT-[A-Z0-9_-]+$)
+- `HOTLINK` - HotLink (opțional, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/zona_pon_re_ftth1000_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/zona_pon_re_ftth1000_centralized.geojson`
 
 ### Zona Spliter
-**Processor:** `_zona_spliter.py`  
-**Source Files:** Files containing `ZONA_SPLITER_REALIZAT_` in filename  
-**Output:** Centralized file only
+**Procesor:** `_zona_spliter.py`  
+**Fișiere Sursă:** Fișiere care conțin `ZONA_SPLITER_REALIZAT_` în nume  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `ID_ZONA` - Zone ID (required, max 50 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `ID_ZONA` - ID Zonă (obligatoriu, max 50 caractere)
 
-**Output Files:**
-- Centralized file: `_output/zona_spliter_centralized.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/zona_spliter_centralized.geojson`
 
 ---
 
-## B) Search Layers
+## B) Straturi de Căutare
 
 ### FTTB Search
-**Processor:** `_fttb_search.py`  
-**Source Files:** Files processed by FTTB search processor  
-**Output:** Centralized file only
+**Procesor:** `_fttb_search.py`  
+**Fișiere Sursă:** Fișiere procesate de procesorul de căutare FTTB  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `COD_FTTB` - FTTB Code (required, pattern: ^[A-Z0-9_-]+$)
-- `LOCALITATE` - Locality (required, 2-100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `COD_FTTB` - Cod FTTB (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/fttb_search.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/fttb_search.geojson`
 
 ### Enclosure Search
-**Processor:** `_enclosure_search.py`  
-**Source Files:** Files processed by enclosure search processor  
-**Output:** Centralized file only
+**Procesor:** `_enclosure_search.py`  
+**Fișiere Sursă:** Fișiere procesate de procesorul de căutare enclosure  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `ENCLOSURE_ID` - Enclosure ID (required, pattern: ^[A-Z0-9_-]+$)
-- `LOCALITATE` - Locality (required, 2-100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `ENCLOSURE_ID` - ID Enclosure (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/enclosure_search.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/enclosure_search.geojson`
 
 ### Camereta Search
-**Processor:** `_camereta_search.py`  
-**Source Files:** Files processed by camereta search processor  
-**Output:** Centralized file only
+**Procesor:** `_camereta_search.py`  
+**Fișiere Sursă:** Fișiere procesate de procesorul de căutare camereta  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `LOCALITATE` - Locality (required, 2-100 chars)
-- `ID_TABELA` - Table ID (required, pattern: ^[A-Z0-9_-]+$)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
+- `ID_TABELA` - ID Tabelă (obligatoriu, pattern: ^[A-Z0-9_-]+$)
 
-**Output Files:**
-- Centralized file: `_output/camereta_search.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/camereta_search.geojson`
 
 ### Scari Search
-**Processor:** `_scari_search.py`  
-**Source Files:** Files processed by scari search processor  
-**Output:** Centralized file only
+**Procesor:** `_scari_search.py`  
+**Fișiere Sursă:** Fișiere procesate de procesorul de căutare scari  
+**Rezultat:** Doar fișier centralizat
 
-#### **Current Output Headers (After Processing):**
-- `COD_FTTB` - FTTB Code (required, pattern: ^[A-Z0-9_-]+$)
-- `TIP_ART` - Article Type (required, max 50 chars)
-- `DENUMIRE_ART` - Article Name (required, 2-100 chars)
-- `NR_ART` - Article Number (required, max 50 chars)
-- `DENUMIRE_BLOC` - Block Name (required, max 100 chars)
-- `NR_SCARA` - Stair Number (required, max 50 chars)
-- `LOCALITATE` - Locality (required, 2-100 chars)
+#### **Anteturi Rezultat Curent (După Procesare):**
+- `COD_FTTB` - Cod FTTB (obligatoriu, pattern: ^[A-Z0-9_-]+$)
+- `TIP_ART` - Tip Articol (obligatoriu, max 50 caractere)
+- `DENUMIRE_ART` - Denumire Articol (obligatoriu, 2-100 caractere)
+- `NR_ART` - Număr Articol (obligatoriu, max 50 caractere)
+- `DENUMIRE_BLOC` - Denumire Bloc (obligatoriu, max 100 caractere)
+- `NR_SCARA` - Număr Scară (obligatoriu, max 50 caractere)
+- `LOCALITATE` - Localitate (obligatoriu, 2-100 caractere)
 
-**Output Files:**
-- Centralized file: `_output/scari_search.geojson`
+**Fișiere Rezultat:**
+- Fișier centralizat: `_output/scari_search.geojson`
 
 ---
 
-## Current System Features
+## Funcționalități Actuale ale Sistemului
 
-### Processing Features
-- **Multi-encoding Detection**: UTF-8, ISO-8859-1, Windows-1252, CP1252
-- **Uppercase Header Processing**: All field names converted to uppercase for consistency
-- **Duplicate Detection**: Based on key fields and geometry
-- **Compact Format**: Single-line JSON for efficient storage
-- **Centralized Output**: Most processors create only centralized files
-- **Individual Files**: Only Case processor creates individual files + manifest.json
-- **Filename Filtering**: Processors only process files with specific name patterns
-- **Empty Properties Filtering**: Features with empty required fields are skipped
-- **Model-specific Required Fields**: Each model has its own set of required fields for filtering
+### Funcționalități de Procesare
+- **Detectare Multi-encoding**: UTF-8, ISO-8859-1, Windows-1252, CP1252
+- **Procesare Anteturi Majuscule**: Toate numele de câmpuri convertite la majuscule pentru consistență
+- **Detectare Duplicate**: Bazată pe câmpuri cheie și geometrie
+- **Format Compact**: JSON pe o singură linie pentru stocare eficientă
+- **Rezultat Centralizat**: Majoritatea procesorilor creează doar fișiere centralizate
+- **Fișiere Individuale**: Doar procesorul Case creează fișiere individuale + manifest.json
+- **Filtrare Nume Fișiere**: Procesorii procesează doar fișiere cu modele specifice de nume
+- **Filtrare Proprietăți Goale**: Entitățile cu câmpuri obligatorii goale sunt omise
+- **Câmpuri Obligatorii Specifice Modelului**: Fiecare model are propriul set de câmpuri obligatorii pentru filtrare
 
-### File Processing Patterns
-- **Case**: `CASE_*` → Individual files + Centralized
-- **Camereta**: `CAMERETA_*` → Centralized only
-- **Enclosure**: `ENCLOSURE_*` → Centralized only
-- **Fibra**: `FO_*` → Centralized only
-- **Hub**: `HUB_*` → Centralized only
-- **Localitati**: `LOCALITATI_*` → Centralized only
-- **Scari**: `SCARI_*` → Centralized only
-- **Spliter**: `SPLITER_*` → Centralized only
-- **Stalpi**: `STALPI_*` → Centralized only
-- **Zona Hub**: `ZONA_ACOPERIRE_HUB_*` → Centralized only
-- **Zona Interventie**: `ZONA_*` or `ZONE_*` → Centralized only
-- **Zona Pon**: `ZONA_PON_REALIZAT_*` → Centralized only
-- **Zona Pon RE FTTH1000**: `ZONA_PON_RE_FTTH1000_*` → Centralized only
-- **Zona Spliter**: `ZONA_SPLITER_REALIZAT_*` → Centralized only
+### Modele de Procesare Fișiere
+- **Case**: `CASE_*` → Fișiere individuale + Centralizat
+- **Camereta**: `CAMERETA_*` → Doar centralizat
+- **Enclosure**: `ENCLOSURE_*` → Doar centralizat
+- **Fibra**: `FO_*` → Doar centralizat
+- **Hub**: `HUB_*` → Doar centralizat
+- **Localitati**: `LOCALITATI_*` → Doar centralizat
+- **Scari**: `SCARI_*` → Doar centralizat
+- **Spliter**: `SPLITER_*` → Doar centralizat
+- **Stalpi**: `STALPI_*` → Doar centralizat
+- **Zona Hub**: `ZONA_ACOPERIRE_HUB_*` → Doar centralizat
+- **Zona Interventie**: `ZONA_*` sau `ZONE_*` → Doar centralizat
+- **Zona Pon**: `ZONA_PON_REALIZAT_*` → Doar centralizat
+- **Zona Pon RE FTTH1000**: `ZONA_PON_RE_FTTH1000_*` → Doar centralizat
+- **Zona Spliter**: `ZONA_SPLITER_REALIZAT_*` → Doar centralizat
 
-### Field Count Summary
-**Main Layers - Extracted Fields:**
-- **Case**: 9 fields (1 required, 8 optional)
-- **Camereta**: 5 fields (4 required, 1 optional)
-- **Enclosure**: 3 fields (3 required)
-- **Fibra**: 5 fields (5 required)
-- **Hub**: 10 fields (10 required)
-- **Localitati**: 8 fields (8 required)
-- **Scari**: 12 fields (6 required, 6 optional)
-- **Spliter**: 1 field (1 required)
-- **Stalpi**: 4 fields (4 required)
-- **Zona Hub**: 6 fields (6 required)
-- **Zona Interventie**: 4 fields (4 required)
-- **Zona Pon**: 2 fields (2 required)
-- **Zona Pon RE FTTH1000**: 3 fields (2 required, 1 optional)
-- **Zona Spliter**: 1 field (1 required)
-- **Spliter**: 2 fields (1 required, 1 optional)
+### Rezumat Numărul de Câmpuri
+**Straturi Principale - Câmpuri Extrase:**
+- **Case**: 9 câmpuri (1 obligatoriu, 8 opționale)
+- **Camereta**: 5 câmpuri (4 obligatorii, 1 opțional)
+- **Enclosure**: 3 câmpuri (3 obligatorii)
+- **Fibra**: 5 câmpuri (5 obligatorii)
+- **Hub**: 10 câmpuri (10 obligatorii)
+- **Localitati**: 8 câmpuri (8 obligatorii)
+- **Scari**: 12 câmpuri (6 obligatorii, 6 opționale)
+- **Spliter**: 2 câmpuri (1 obligatoriu, 1 opțional)
+- **Stalpi**: 4 câmpuri (4 obligatorii)
+- **Zona Hub**: 6 câmpuri (6 obligatorii)
+- **Zona Interventie**: 4 câmpuri (4 obligatorii)
+- **Zona Pon**: 2 câmpuri (2 obligatorii)
+- **Zona Pon RE FTTH1000**: 3 câmpuri (2 obligatorii, 1 opțional)
+- **Zona Spliter**: 1 câmp (1 obligatoriu)
 
-**Search Layers - Extracted Fields:**
-- **FTTB Search**: 2 fields (2 required)
-- **Enclosure Search**: 2 fields (2 required)
-- **Camereta Search**: 2 fields (2 required)
-- **Scari Search**: 7 fields (7 required)
+**Straturi de Căutare - Câmpuri Extrase:**
+- **FTTB Search**: 2 câmpuri (2 obligatorii)
+- **Enclosure Search**: 2 câmpuri (2 obligatorii)
+- **Camereta Search**: 2 câmpuri (2 obligatorii)
+- **Scari Search**: 7 câmpuri (7 obligatorii)
 
-### Output File Structure
-- **Individual Files**: Only Case processor creates individual files in `_output/case/` folder
-- **Centralized Files**: All processors create centralized files in `_output/` folder
-- **Manifest Files**: Only Case processor creates `manifest.json` with file listings
-- **Compact Format**: All output files use compact JSON format for efficiency
-- **Professional Headers**: All files include proper GeoJSON headers and metadata
+### Structura Fișierelor Rezultat
+- **Fișiere Individuale**: Doar procesorul Case creează fișiere individuale în folderul `_output/case/`
+- **Fișiere Centralizate**: Toți procesorii creează fișiere centralizate în folderul `_output/`
+- **Fișiere Manifest**: Doar procesorul Case creează `manifest.json` cu listarea fișierelor
+- **Format Compact**: Toate fișierele rezultat folosesc format JSON compact pentru eficiență
+- **Anteturi Profesionale**: Toate fișierele includ anteturi GeoJSON și metadate corespunzătoare

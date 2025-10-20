@@ -10,7 +10,7 @@ Acest ghid acoperă utilizarea sistemului Procesor GeoJSON V2 pentru procesarea 
 - **Procesoare Individuale**: Procesează tipuri specifice de modele cu anteturi standardizate
 - **Procesor Principal**: Orchestrează toate procesoarele individuale
 - **Configurația Modelelor**: Definește regulile de detectare și maparea câmpurilor
-- **Procesarea Centralizată**: Creează fișiere de ieșire unificate per tip de model
+- **Procesarea Centralizată**: Creează fișiere rezultat unificate per tip de model
 
 ### Tipuri de Modele
 
@@ -134,7 +134,7 @@ python3 _camereta.py _input _output
 # Fără detectarea duplicatelor
 python3 _camereta.py _input _output --no-duplicates
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `camereta_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `CAMERETA_` în nume
 
@@ -143,9 +143,8 @@ python3 _camereta.py _input _output --no-duplicates
 # Procesează fișierele case (creează subdirectorul case/)
 python3 _case.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Fișiere individuale**: `case/CASE_*.geojson` (compact format)
-- **Fișier centralizat**: `case_centralized.geojson`
 - **Manifest**: `case/manifest.json`
 - **Filtrare**: Doar fișiere cu `CASE_` în nume
 
@@ -153,7 +152,7 @@ python3 _case.py _input _output
 ```bash
 python3 _enclosure.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `enclosure_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ENCLOSURE_` în nume
 
@@ -161,7 +160,7 @@ python3 _enclosure.py _input _output
 ```bash
 python3 _hub.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `hub_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `HUB_` în nume
 
@@ -169,7 +168,7 @@ python3 _hub.py _input _output
 ```bash
 python3 _localitati.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `localitati_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `LOCALITATI_` în nume
 
@@ -177,7 +176,7 @@ python3 _localitati.py _input _output
 ```bash
 python3 _stalpi.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `stalpi_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `STALPI_` în nume
 
@@ -185,7 +184,7 @@ python3 _stalpi.py _input _output
 ```bash
 python3 _zona_hub.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `zona_hub_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_ACOPERIRE_HUB_` în nume
 
@@ -193,7 +192,7 @@ python3 _zona_hub.py _input _output
 ```bash
 python3 _zone_interventie.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `zone_interventie_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_` sau `ZONE_` în nume
 
@@ -201,7 +200,7 @@ python3 _zone_interventie.py _input _output
 ```bash
 python3 _spliter.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `spliter_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `SPLITER_` în nume
 
@@ -209,7 +208,7 @@ python3 _spliter.py _input _output
 ```bash
 python3 _zona_pon.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `zona_pon_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_PON_REALIZAT_` în nume
 
@@ -217,7 +216,7 @@ python3 _zona_pon.py _input _output
 ```bash
 python3 _zona_spliter.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `zona_spliter_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_SPLITER_REALIZAT_` în nume
 
@@ -225,7 +224,7 @@ python3 _zona_spliter.py _input _output
 ```bash
 python3 _fibra.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `fibra_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `FO_` în nume
 
@@ -233,7 +232,7 @@ python3 _fibra.py _input _output
 ```bash
 python3 _scari.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `scari_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `SCARI_` în nume
 
@@ -241,7 +240,7 @@ python3 _scari.py _input _output
 ```bash
 python3 _zona_pon_re_ftth1000.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `zona_pon_re_ftth1000_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_PON_RE_FTTH1000_` în nume
 
@@ -251,28 +250,28 @@ python3 _zona_pon_re_ftth1000.py _input _output
 ```bash
 python3 _fttb_search.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `fttb_search.geojson`
 
 #### 2. Procesor Scari Search
 ```bash
 python3 _scari_search.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `scari_search.geojson`
 
 #### 3. Procesor Camereta Search
 ```bash
 python3 _camereta_search.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `camereta_search.geojson`
 
 #### 4. Procesor Enclosure Search
 ```bash
 python3 _enclosure_search.py _input _output
 ```
-**Ieșire**: 
+**Rezultat**: 
 - **Doar fișier centralizat**: `enclosure_search.geojson`
 
 ## 🎯 Utilizarea Procesorului Principal
@@ -304,7 +303,7 @@ python3 _process_all.py _input _output --no-duplicates
 python3 _process_all.py _input _output --models camereta case --no-duplicates
 ```
 
-## 📊 Formatul Ieșirii
+## 📊 Formatul Rezultatelor
 
 ### Fișiere Individuale (Doar Case)
 - **Format**: GeoJSON compact (o singură linie)
@@ -312,16 +311,16 @@ python3 _process_all.py _input _output --models camereta case --no-duplicates
 - **Conținut**: Anteturi standardizate cu doar câmpurile extrase
 - **Manifest**: `case/manifest.json` cu lista fișierelor procesate
 
-### Fișiere Centralizate (Toate Procesoarele)
+### Fișiere Centralizate (Majoritatea Procesoarelor)
 - **Format**: GeoJSON compact (o singură linie)
 - **Denumire**: `[model]_centralized.geojson`
 - **Conținut**: Toate features din fișierele corespunzătoare combinate
 - **Sortare**: Alfabetică după LOCALITATE
 
 ### Cazuri Speciale
-- **Fișiere case**: Stocate în subdirectorul `case/` cu manifest.json
+- **Fișiere case**: Doar fișiere individuale în subdirectorul `case/` cu manifest.json (fără fișier centralizat)
 - **Fișiere căutare**: Optimizate pentru operațiuni de căutare cu câmpuri minime
-- **Filtrare avansată**: Toate procesoarele filtrează features cu câmpuri goale
+- **Filtrare avansată**: Toate procesoarele filtrează features cu câmpuri obligatorii goale
 
 ## 🔧 Configurare
 
@@ -517,19 +516,19 @@ python3 _process_all.py _input _output --models fttb_search camereta_search scar
 
 ```
 procesare-documente/
-├── _input/                          # Fișiere GeoJSON de intrare
-├── _output/                         # Fișiere procesate de ieșire
+├── _input/                          # Fișiere GeoJSON sursă
+├── _output/                         # Fișiere rezultat procesare
 │   ├── case/                        # Subdirectorul fișierelor case
 │   │   ├── CASE_*.geojson           # Fișiere individuale case
 │   │   └── manifest.json            # Manifest cu lista fișierelor
-│   ├── *_centralized.geojson         # Fișiere centralizate (toate modelele)
+│   ├── *_centralized.geojson         # Fișiere centralizate (majoritatea modelelor)
 │   └── *_search.geojson             # Fișiere de căutare
 ├── config/
-│   ├── models.json                  # Configurația modelelor (23 modele)
+│   ├── models.json                  # Configurația modelelor (18 modele)
 │   └── settings.json                # Setările de procesare
 ├── src/                             # Motorul de procesare principal
 ├── _process_all.py                  # Procesorul master
-├── _[model].py                      # Procesoare individuale (23 procesoare)
+├── _[model].py                      # Procesoare specializate (18 procesoare)
 └── TUTORIAL.md                      # Acest tutorial
 ```
 
@@ -550,13 +549,13 @@ python3 _camereta.py --help
 # Ar trebui să afișeze ajutorul procesorului
 ```
 
-### Ieșirea Consolei
+### Rezultatele Consolei
 ```
 🎉 Procesarea Completă!
 📊 Procesate: X/Y fișiere
 🔢 Total features: XXXX
 🔄 Duplicate sărite: XX
-📁 Fișier centralizat: _output/[model]_centralized.geojson
+📁 Fișier rezultat: _output/[model]_centralized.geojson
 ```
 
 ### Verificarea Fișierelor
@@ -581,8 +580,8 @@ python3 -c "import json; data=json.load(open('_output/camereta_centralized.geojs
 - **Anteturi uppercase**: Toate câmpurile convertite la uppercase
 - **Format compact**: JSON pe o singură linie pentru eficiență
 
-### Structura de Ieșire
-- **Case**: Fișiere individuale + centralizat + manifest
+### Structura Rezultatelor
+- **Case**: Fișiere individuale + manifest (fără centralizat)
 - **Toate celelalte**: Doar fișier centralizat
 - **Sortare**: Alfabetică după LOCALITATE
 - **Metadate**: Timestamp și informații de procesare

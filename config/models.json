@@ -432,13 +432,20 @@
     "spliter": {
       "name": "Signal Splitter",
       "layer": "main",
-      "description": "Spliter data with type only",
+      "description": "Spliter data with type and number",
       "required_fields": ["TIP_SPLITER"],
-      "extract_fields": ["TIP_SPLITER"],
+      "extract_fields": ["TIP_SPLITER", "NR_SPLITERE"],
       "field_mappings": {
         "TIP_SPLITER": {
           "type": "string",
           "required": true,
+          "validation": {
+            "max_length": 50
+          }
+        },
+        "NR_SPLITERE": {
+          "type": "string",
+          "required": false,
           "validation": {
             "max_length": 50
           }

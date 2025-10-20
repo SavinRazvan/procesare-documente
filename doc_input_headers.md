@@ -165,6 +165,7 @@ This document provides an accurate representation of the current field configura
 
 #### **Current Output Headers (After Processing):**
 - `TIP_SPLITER` - Splitter Type (required, max 50 chars)
+- `NR_SPLITERE` - Number of Splitters (optional, max 50 chars)
 
 **Output Files:**
 - Centralized file: `_output/spliter_centralized.geojson`
@@ -353,6 +354,7 @@ This document provides an accurate representation of the current field configura
 - **Zona Pon**: 2 fields (2 required)
 - **Zona Pon RE FTTH1000**: 3 fields (2 required, 1 optional)
 - **Zona Spliter**: 1 field (1 required)
+- **Spliter**: 2 fields (1 required, 1 optional)
 
 **Search Layers - Extracted Fields:**
 - **FTTB Search**: 2 fields (2 required)

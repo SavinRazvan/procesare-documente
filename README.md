@@ -1,110 +1,110 @@
-# GeoJSON Processor V2
+# Procesor GeoJSON V2
 
-> Professional document processing system for GeoJSON files with comprehensive data validation, duplicate detection, and centralized output generation.
+> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare output centralizat.
 
-## 🚀 Quick Start
+## 🚀 Pornire Rapidă
 
 ```bash
-# Setup environment
+# Configurare mediu
 conda create -n .proc_doc python=3.11 -y
 conda activate .proc_doc
 
-# Navigate to project
+# Navigare la proiect
 cd /home/razvansavin/Projects/procesare-documente
 
-# Process all models
+# Procesare toate modelele
 python3 _process_all.py _input _output
 ```
 
-## 📋 Features
+## 📋 Funcționalități
 
-- **23 Individual Processors**: Handle specific model types
-- **Master Processor**: Orchestrates all individual processors
-- **Configuration-Driven**: JSON-based model definitions
-- **Professional Logging**: Comprehensive error handling
-- **No External Dependencies**: Python standard library only
-- **Centralized Output**: Unified processing results
+- **23 Procesori Individuali**: Gestionează tipuri specifice de modele
+- **Procesor Principal**: Orchestrează toți procesorii individuali
+- **Configurare prin JSON**: Definiții de modele bazate pe JSON
+- **Logging Profesional**: Gestionare comprehensivă a erorilor
+- **Fără Dependențe Externe**: Doar biblioteca standard Python
+- **Output Centralizat**: Rezultate de procesare unificate
 
-## 📁 Project Structure
+## 📁 Structura Proiectului
 
 ```
 procesare-documente/
-├── _input/                    # Input GeoJSON files
-├── _output/                   # Processed output files
-├── config/                    # Configuration files
-├── src/                       # Core processing engine
-├── _process_all.py            # Master processor
-├── _[model].py               # Individual processors (23 files)
-└── README.md                  # This file
+├── _input/                    # Fișiere GeoJSON de intrare
+├── _output/                   # Fișiere procesate de ieșire
+├── config/                    # Fișiere de configurare
+├── src/                       # Motor de procesare principal
+├── _process_all.py            # Procesor principal
+├── _[model].py               # Procesori individuali (23 fișiere)
+└── README.md                  # Acest fișier
 ```
 
-> **For detailed architecture overview, see [TUTORIAL.md](TUTORIAL.md)**
+> **Pentru o prezentare detaliată a arhitecturii, vezi [TUTORIAL.md](TUTORIAL.md)**
 
-## 📚 Documentation
+## 📚 Documentație
 
-- **[TUTORIAL.md](TUTORIAL.md)** - Complete user guide with setup instructions
-- **[doc_input_headers.md](doc_input_headers.md)** - Field specifications and technical reference
-- **[requirements.txt](requirements.txt)** - Dependencies information
+- **[TUTORIAL.md](TUTORIAL.md)** - Ghid complet utilizator cu instrucțiuni de configurare
+- **[doc_input_headers.md](doc_input_headers.md)** - Specificații câmpuri și referință tehnică
+- **[requirements.txt](requirements.txt)** - Informații dependențe
 
-## 🔧 Requirements
+## 🔧 Cerințe
 
 - **Python**: 3.11+
-- **Conda**: For environment management
-- **No External Dependencies**: Uses only Python standard library
+- **Conda**: Pentru gestionarea mediului
+- **Fără Dependențe Externe**: Folosește doar biblioteca standard Python
 
-## 📊 Supported Models
+## 📊 Modele Suportate
 
-### Main Layers (14)
+### Straturi Principale (14)
 - `camereta`, `enclosure`, `hub`, `localitati`, `stalpi`
 - `zona_hub`, `zone_interventie`, `case`, `spliter`
 - `zona_pon`, `zona_spliter`, `fibra`, `scari`
 - `zona_pon_re_ftth1000`
 
-### Search Layers (4)
+### Straturi de Căutare (4)
 - `fttb_search`, `scari_search`, `camereta_search`, `enclosure_search`
 
-## 🎯 Usage Examples
+## 🎯 Exemple de Utilizare
 
 ```bash
-# Process specific models
+# Procesare modele specifice
 python3 _process_all.py _input _output --models camereta case
 
-# Process without duplicate detection
+# Procesare fără detectare duplicat
 python3 _process_all.py _input _output --no-duplicates
 
-# Individual processor
+# Procesor individual
 python3 _camereta.py _input _output
 ```
 
-## 📈 Performance
+## 📈 Performanță
 
-- **Lightweight**: No external dependencies
-- **Fast**: Optimized for large datasets
-- **Memory Efficient**: Streaming processing
-- **Scalable**: Handles thousands of features
+- **Ușor**: Fără dependențe externe
+- **Rapid**: Optimizat pentru seturi mari de date
+- **Eficient Memorie**: Procesare în flux
+- **Scalabil**: Gestionează mii de entități
 
-## 🛠️ Development
+## 🛠️ Dezvoltare
 
 ```bash
-# Test individual processor
+# Testare procesor individual
 python3 _camereta.py _input _output
 
-# Test master processor
+# Testare procesor principal
 python3 _process_all.py _input _output --models camereta
 
-# Check help
+# Verificare ajutor
 python3 _process_all.py --help
 ```
 
-## 📞 Support
+## 📞 Suport
 
-For issues or questions:
-1. Check [TUTORIAL.md](TUTORIAL.md) for usage instructions and setup
-2. Review [doc_input_headers.md](doc_input_headers.md) for field specifications
-3. Check console output for error messages
-4. Verify input file formats and naming
+Pentru probleme sau întrebări:
+1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare
+2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri
+3. Verifică output-ul consolei pentru mesaje de eroare
+4. Verifică formatele fișierelor de intrare și denumirile
 
 ---
 
-**Author**: Savin Ionut Razvan  
-**Version**: 2025.10.05  
+**Autor**: Savin Ionut Razvan  
+**Versiunea**: 2025.10.05  

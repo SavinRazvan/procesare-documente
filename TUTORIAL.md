@@ -112,7 +112,7 @@ Deoarece toată funcționalitatea este construită folosind biblioteca standard 
 
 ### Utilizare de Bază
 ```bash
-# Procesează toate modelele deodată
+# Procesează toate modelele simultan
 python3 _process_all.py _input _output
 
 # Procesează modele specifice
@@ -122,7 +122,7 @@ python3 _process_all.py _input _output --models camereta case spliter
 python3 _process_all.py _input _output --no-duplicates
 ```
 
-## 📁 Comenzi Procesoare Individuale
+## 📁 Comenzi Procesoare Specializate
 
 ### Procesoare Strat Principal
 
@@ -500,7 +500,7 @@ ls -la _output/
 python3 _camereta.py _input _output
 python3 _camereta_search.py _input _output
 
-# 2. Verifică formatul ieșirii
+# 2. Verifică formatul rezultatelor
 head -n 5 _output/camereta_centralized.geojson
 
 # 3. Testează procesorul principal
@@ -528,7 +528,7 @@ procesare-documente/
 │   ├── models.json                  # Configurația modelelor (18 modele)
 │   └── settings.json                # Setările de procesare
 ├── src/                             # Motorul de procesare principal
-├── _process_all.py                  # Procesorul master
+├── _process_all.py                  # Procesorul principal
 ├── _[model].py                      # Procesoare specializate (18 procesoare)
 └── TUTORIAL.md                      # Acest tutorial
 ```

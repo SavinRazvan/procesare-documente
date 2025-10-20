@@ -2,13 +2,13 @@
 
 ## 📋 Prezentare Generală
 
-Acest ghid acoperă utilizarea sistemului Procesor GeoJSON V2 pentru procesarea diferitelor tipuri de date de infrastructură de rețea. Sistemul suportă **23 tipuri diferite de modele** pentru atât straturile principale cât și operațiunile de căutare.
+Acest ghid acoperă utilizarea sistemului Procesor GeoJSON V2 pentru procesarea diferitelor tipuri de date de infrastructură de rețea. Sistemul suportă **18 tipuri diferite de modele** pentru atât straturile principale cât și operațiunile de căutare.
 
 ## 🏗️ Arhitectura Sistemului
 
 ### Componente Principale
-- **Procesoare Individuale**: Procesează tipuri specifice de modele cu anteturi standardizate
-- **Procesor Principal**: Orchestrează toate procesoarele individuale
+- **Procesoare Specializate**: Procesează tipuri specifice de modele cu anteturi standardizate
+- **Procesor Principal**: Orchestrează toate procesoarele specializate
 - **Configurația Modelelor**: Definește regulile de detectare și maparea câmpurilor
 - **Procesarea Centralizată**: Creează fișiere rezultat unificate per tip de model
 
@@ -278,7 +278,7 @@ python3 _enclosure_search.py _input _output
 
 ### Procesează Toate Modelele
 ```bash
-# Procesează toate cele 23 tipuri de modele
+# Procesează toate cele 18 tipuri de modele
 python3 _process_all.py _input _output
 ```
 
@@ -358,9 +358,10 @@ conda activate .proc_doc
 
 ### Configurația Modelelor (`config/models.json`)
 - Definește câmpurile necesare pentru detectarea modelelor
-- Specifică câmpurile de extragere pentru ieșire
+- Specifică câmpurile de extragere pentru rezultate
 - Setează regulile de validare și maparea câmpurilor
-- **23 modele configurate** cu validări specifice
+- **18 modele configurate** cu validări specifice
+- **Spliter**: Include câmpul NR_SPLITERE pentru numărul de splitere
 
 ### Setările (`config/settings.json`)
 - Parametrii de procesare
@@ -601,4 +602,4 @@ Pentru probleme sau întrebări:
 
 **Versiune**: 2.0  
 **Autor**: Savin Ionut Razvan  
-**Data**: 2025.10.05
+**Data**: 2025.10.20

@@ -6,7 +6,7 @@
 
 Acest sistem face parte din proiectul **Fiber Optic Networks Manager** - o soluție completă pentru managementul infrastructurii de rețele de fibră optică. Sistemul procesează datele geografice ale elementelor de rețea pentru a oferi o vizibilitate completă asupra infrastructurii de telecomunicații.
 
-## 🎯 Ce Sunt Aceste Procesoare?
+## 🔧 Ce Sunt Aceste Procesoare?
 
 Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din infrastructura de rețele de telecomunicații. Fiecare procesor gestionează un tip specific de elemente tehnice din rețelele de fibră optică:
 
@@ -26,7 +26,7 @@ Acest sistem conține **18 procesoare specializate** pentru procesarea automată
 - **📡 Zona PON RE FTTH1000**: Zone PON Realizate FTTH1000 pentru acces la 1Gbps
 - **🔍 Search Layers**: Sisteme de căutare FTTB, scări, camerete, închideri pentru identificare
 
-**Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de rețele de fibră optică, cu validare automată, detectare duplicat și generare rezultate standardizate pentru managementul rețelelor de telecomunicații.
+> **Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de rețele de fibră optică, cu validare automată, detectare duplicat și generare rezultate standardizate pentru managementul rețelelor de telecomunicații.
 
 ## 🚀 Pornire Rapidă
 
@@ -45,7 +45,7 @@ python3 _process_all.py _input _output
 ## 📋 Funcționalități
 
 - **18 Procesori Specializați**: Gestionează tipuri specifice de modele
-- **Procesor Principal**: Orchestrează toți procesorii specializați
+- **Procesor Principal**: Orchestrează toți procesorii specializați  
 - **Configurare prin JSON**: Definiții de modele bazate pe fișiere JSON
 - **Logging Profesional**: Gestionare comprehensivă a erorilor și monitorizare
 - **Fără Dependențe Externe**: Doar biblioteca standard Python
@@ -90,7 +90,7 @@ procesare-documente/
 
 ### Main Layers (14)
 - `camereta`, `enclosure`, `hub`, `localitati`, `stalpi`
-- `zona_hub`, `zone_interventie`, `case`, `spliter`
+- `zona_hub`, `zone_interventie`, `case`, `spliter`  
 - `zona_pon`, `zona_spliter`, `fibra`, `scari`
 - `zona_pon_re_ftth1000`
 
@@ -113,7 +113,7 @@ python3 _camereta.py _input _output
 ## 📈 Performance
 
 - **Lightweight**: Fără dependențe externe
-- **Fast**: Optimizat pentru seturi mari de date
+- **Fast**: Optimizat pentru seturi mari de date  
 - **Memory Efficient**: Procesare în flux
 - **Scalable**: Gestionează mii de entități
 
@@ -133,8 +133,9 @@ python3 _process_all.py --help
 ## 📞 Support
 
 Pentru probleme sau întrebări:
+
 1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare
-2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri
+2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri  
 3. Verifică rezultatele consolei pentru mesaje de eroare
 4. Verifică formatele fișierelor sursă și denumirile
 

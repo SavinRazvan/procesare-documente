@@ -17,7 +17,7 @@ Acest modul gestionează fișierele GeoJSON care descriu infrastructura fizică 
 
 ```bash
 # Clonare repository
-git clone https://github.com/<user>/procesare-documente.git
+git clone https://github.com/SavinRazvan/procesare-documente
 cd procesare-documente
 
 # Creare și activare mediu virtual

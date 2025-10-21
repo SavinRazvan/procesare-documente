@@ -35,7 +35,7 @@ Tip element	Descriere generală
 - 🌐 Fibra	Tronsoane de fibră optică
 - 🏢 Scari	Accese la clădiri (FTTB)
 - 📡 Zona PON RE FTTH1000	Zone PON realizate FTTH1000
-- 🔍 Search Layers	Layere pentru căutare (FTTB, scări, camerete, închideri)
+- 🔍 Search Layers	-> Layere pentru căutare (FTTB, scări, camerete, închideri)
 
 
 Scop: automatizarea procesării și validării datelor geografice din infrastructura de telecomunicații, cu rezultate centralizate și coerente.

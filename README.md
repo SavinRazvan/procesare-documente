@@ -1,15 +1,31 @@
-Procesor GeoJSON V2 – Fiber Optic Networks Manager
 
-> Sistem de procesare a fișierelor GeoJSON pentru infrastructura de rețele de fibră optică. Include validare a datelor, identificare de duplicate și generare de rezultate standardizate pentru gestionarea informațiilor geografice.
+# Procesor GeoJSON V2 – Fiber Optic Networks Manager
 
-
+> Sistem de procesare a fișierelor GeoJSON pentru infrastructura de rețele de fibră optică.  
+> Include validare a datelor, identificare de duplicate și generare de rezultate standardizate pentru gestionarea informațiilor geografice.
 
 ---
 
-🗺️ Descriere generală
+## 🗺️ Descriere generală
 
-Proiectul Fiber Optic Networks Manager oferă un set de instrumente pentru procesarea datelor geografice asociate elementelor din rețelele de telecomunicații.
+Proiectul **Fiber Optic Networks Manager** oferă un set de instrumente pentru procesarea datelor geografice asociate elementelor din rețelele de telecomunicații.  
 Acest modul gestionează fișierele GeoJSON care descriu infrastructura fizică (clădiri, stâlpi, fibre, zone de acoperire etc.), aplicând reguli de validare și filtrare automată.
+
+---
+
+## 📦 Instalare rapidă
+
+```bash
+# Clonare repository
+git clone https://github.com/<user>/procesare-documente.git
+cd procesare-documente
+
+# Creare și activare mediu virtual
+conda create -n proc_doc python=3.11 -y
+conda activate proc_doc
+
+# (Opțional) Instalare dependențe
+pip install -r requirements.txt
 
 
 ---
@@ -17,25 +33,25 @@ Acest modul gestionează fișierele GeoJSON care descriu infrastructura fizică 
 ⚙️ Componentele procesorului
 
 Sistemul include 18 procesoare dedicate, fiecare destinat unui tip specific de obiect din rețea.
-Fiecare procesor rulează independent sau coordonat printr-un procesor principal.
+Fiecare procesor poate fi rulat independent sau coordonat printr-un procesor principal.
 
 Tip element	Descriere generală
 
-- 🏠 Case	 -> Clădiri rezidențiale cu cod FTTB și echipamente asociate
-- 📡 Camereta ->	Punct tehnic de distribuție
-- 📦 Enclosure	 -> Camere tehnice pentru echipamente
-- 🌐 Hub	-> Hub-uri de rețea cu informații despre localitate
-- 🏘️ Localitati	 ->Localități, comune, etc.
-- 📶 Stalpi ->	Stâlpi utilitari (tip, material)
-- 🏢 Zona Hub	-> Zone de acoperire pentru fiecare hub
-- 🔧 Zone Interventie	-> Zone de intervenție și acoperire
-- 🔌 Spliter	-> Splittere optice (tip, porturi)
-- 📡 Zona PON	-> Zone Passive Optical Network
-- 📶 Zona Spliter	-> Zone de distribuție pentru splittere
-- 🌐 Fibra -> 	Tronsoane de fibră optică
-- 🏢 Scari -> 	Accese la clădiri (FTTB)
-- 📡 Zona PON RE FTTH1000 	Zone PON (cu putin upgrade :)) )
-- 🔍 Search Layers	-> Layere pentru căutare (FTTB, scări, camerete, închideri)
+🏠 Case	Clădiri rezidențiale cu cod FTTB și echipamente asociate
+📡 Camereta	Punct tehnic de distribuție
+📦 Enclosure	Camere tehnice pentru echipamente
+🌐 Hub	Hub-uri de rețea cu informații despre localitate
+🏘️ Localitati	Localități, comune etc.
+📶 Stalpi	Stâlpi utilitari (tip, material)
+🏢 Zona Hub	Zone de acoperire pentru fiecare hub
+🔧 Zone Interventie	Zone de intervenție și acoperire
+🔌 Spliter	Splittere optice (tip, porturi)
+📡 Zona PON	Zone Passive Optical Network
+📶 Zona Spliter	Zone de distribuție pentru splittere
+🌐 Fibra	Tronsoane de fibră optică
+🏢 Scari	Accese la clădiri (FTTB)
+📡 Zona PON RE FTTH1000	Zone PON FTTH1000
+🔍 Search Layers	Layere pentru căutare (FTTB, scări, camerete, închideri)
 
 
 Scop: automatizarea procesării și validării datelor geografice din infrastructura de telecomunicații, cu rezultate centralizate și coerente.
@@ -44,10 +60,6 @@ Scop: automatizarea procesării și validării datelor geografice din infrastruc
 ---
 
 🚀 Pornire rapidă
-
-# Creare și activare mediu virtual
-conda create -n proc_doc python=3.11 -y
-conda activate proc_doc
 
 # Navigare în directorul proiectului
 cd /home/razvansavin/Projects/procesare-documente
@@ -64,20 +76,19 @@ python3 _process_all.py _input _output
 
 Procesor principal pentru execuție unificată
 
-Configurare JSON pentru modele și setări
+Configurare prin fișiere JSON pentru modele și setări
 
 Sistem de logging pentru monitorizare și depanare
 
-Fără dependențe externe, bazat pe biblioteca standard Python
+Fără dependențe externe (bazat pe biblioteca standard Python)
 
 Rezultate centralizate într-o structură uniformă
 
 
 
 ---
-# De refacut...
 
-📁 Structura proiectului 
+📁 Structura proiectului
 
 procesare-documente/
 ├── _input/                    # Fișiere GeoJSON sursă
@@ -96,7 +107,7 @@ procesare-documente/
 ├── TUTORIAL.md                # Ghid de utilizare
 └── README.md                  # Acest fișier
 
-> Pentru detalii suplimentare despre funcționare și configurare, vezi TUTORIAL.md
+> Pentru detalii suplimentare despre funcționare și configurare, vezi TUTORIAL.md.
 
 
 
@@ -121,7 +132,7 @@ Python 3.11+
 
 Conda pentru gestionarea mediului
 
-Nu sunt necesare pachete externe — folosește doar biblioteca standard Python
+Fără pachete externe – folosește doar biblioteca standard Python
 
 
 
@@ -207,4 +218,3 @@ Pentru depanare sau întrebări:
 
 Autor: Savin Ionuț Răzvan
 Versiune: 2025.10.05
-

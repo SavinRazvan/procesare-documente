@@ -6,11 +6,21 @@
 
 Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din telecom infrastructure. Fiecare procesor gestionează un tip specific de elemente tehnice:
 
-- **🏠 Case & Housing**: Procesare date despre case, apartamente și locuințe
-- **📡 Technical Infrastructure**: Cabine tehnice, camerete, enclosures și hub-uri
-- **🔌 Communication Networks**: Fibre optice, splitere, stalpi și zone de acoperire
-- **📍 Location Services**: Localități, zone de intervenție și zone PON
-- **🔍 Advanced Search**: Sisteme de căutare pentru toate tipurile de elemente
+- **🏠 Case**: Clădiri rezidențiale cu cod FTTB și echipamente
+- **📡 Camereta**: Cabine tehnice cu observații și ID tabelă
+- **📦 Enclosure**: Închideri tehnice cu ID și observații
+- **🌐 Hub**: Hub-uri de rețea cu nume și localitate
+- **🏘️ Localitati**: Localități cu nume, comună și SIRUTA
+- **📶 Stalpi**: Stâlpi utilitari cu material și tip
+- **🏢 Zona Hub**: Zone de acoperire hub cu statistici case
+- **🔧 Zone Interventie**: Zone de intervenție cu localitate și zonă
+- **🔌 Spliter**: Divizoare de semnal cu tip și număr
+- **📡 Zona PON**: Zone PON cu identificatori
+- **📶 Zona Spliter**: Zone divizor cu ID zonă
+- **🌐 Fibra**: Fibre optice cu număr fire și localitate
+- **🏢 Scari**: Scări cu cod FTTB și articole
+- **📡 Zona PON RE FTTH1000**: Zone PON RE FTTH1000
+- **🔍 Search Layers**: Sisteme de căutare FTTB, scări, camerete, închideri
 
 **Scopul**: Automatizarea procesării datelor geografice pentru telecom infrastructure, cu validare automată, detectare duplicat și generare rezultate standardizate.
 

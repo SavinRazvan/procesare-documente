@@ -84,7 +84,7 @@ procesare-documente/
 
 - **Python**: 3.11+
 - **Conda**: Pentru gestionarea mediului
-- **Fără Dependențe Externe**: Folosește doar biblioteca standard Python
+- **Fără Pachete Externe**: Folosește doar biblioteca standard Python
 
 ## 📊 Modele Suportate
 

@@ -4,7 +4,7 @@
 
 ## 🎯 Ce Sunt Aceste Procesoare?
 
-Acest sistem conține **18 procesoare specializați** pentru procesarea automată a fișierelor GeoJSON din telecom infrastructure. Fiecare procesor gestionează un tip specific de elemente tehnice:
+Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din telecom infrastructure. Fiecare procesor gestionează un tip specific de elemente tehnice:
 
 - **🏠 Case & Housing**: Procesare date despre case, apartamente și locuințe
 - **📡 Technical Infrastructure**: Cabine tehnice, camerete, enclosures și hub-uri
@@ -44,10 +44,18 @@ procesare-documente/
 ├── _input/                    # Fișiere GeoJSON sursă
 ├── _output/                   # Fișiere rezultat procesare
 ├── config/                    # Fișiere de configurare
+│   ├── models.json           # Configurația modelelor (18 modele)
+│   └── settings.json         # Setările de procesare
 ├── src/                       # Motor de procesare principal
+│   ├── core/                  # Componente principale
+│   └── utils/                 # Utilitare sistem
+├── logs/                      # Fișiere log sistem
 ├── _process_all.py            # Procesor principal
 ├── _[model].py               # Procesori specializați (18 fișiere)
-└── README.md                  # Acest fișier
+├── doc_input_headers.md      # Documentație câmpuri
+├── requirements.txt           # Dependențe sistem
+├── TUTORIAL.md               # Ghid complet utilizator
+└── README.md                 # Acest fișier
 ```
 
 > **Pentru o prezentare detaliată a arhitecturii, vezi [TUTORIAL.md](TUTORIAL.md)**

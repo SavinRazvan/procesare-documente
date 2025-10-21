@@ -75,8 +75,9 @@ Rezultate centralizate într-o structură uniformă
 
 
 ---
+# De refacut...
 
-📁 Structura proiectului
+📁 Structura proiectului 
 
 procesare-documente/
 ├── _input/                    # Fișiere GeoJSON sursă

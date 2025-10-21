@@ -1,28 +1,32 @@
-# Procesor GeoJSON V2
+# Procesor GeoJSON V2 - Fiber Optic Networks Manager
 
-> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare rezultate centralizate.
+> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare rezultate centralizate pentru infrastructura de rețele de telecomunicații.
+
+## 🎯 Proiectul Fiber Optic Networks Manager
+
+Acest sistem face parte din proiectul **Fiber Optic Networks Manager** - o soluție completă pentru managementul infrastructurii de rețele de fibră optică. Sistemul procesează datele geografice ale elementelor de rețea pentru a oferi o vizibilitate completă asupra infrastructurii de telecomunicații.
 
 ## 🎯 Ce Sunt Aceste Procesoare?
 
-Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din telecom infrastructure. Fiecare procesor gestionează un tip specific de elemente tehnice:
+Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din infrastructura de rețele de telecomunicații. Fiecare procesor gestionează un tip specific de elemente tehnice din rețelele de fibră optică:
 
-- **🏠 Case**: Clădiri rezidențiale cu cod FTTB și echipamente
-- **📡 Camereta**: Cabine tehnice cu observații și ID tabelă
-- **📦 Enclosure**: Închideri tehnice cu ID și observații
-- **🌐 Hub**: Hub-uri de rețea cu nume și localitate
-- **🏘️ Localitati**: Localități cu nume, comună și SIRUTA
-- **📶 Stalpi**: Stâlpi utilitari cu material și tip
-- **🏢 Zona Hub**: Zone de acoperire hub cu statistici case
-- **🔧 Zone Interventie**: Zone de intervenție cu localitate și zonă
-- **🔌 Spliter**: Divizoare de semnal cu tip și număr
-- **📡 Zona PON**: Zone PON cu identificatori
-- **📶 Zona Spliter**: Zone divizor cu ID zonă
-- **🌐 Fibra**: Fibre optice cu număr fire și localitate
-- **🏢 Scari**: Scări cu cod FTTB și articole
-- **📡 Zona PON RE FTTH1000**: Zone PON RE FTTH1000
-- **🔍 Search Layers**: Sisteme de căutare FTTB, scări, camerete, închideri
+- **🏠 Case**: Clădiri rezidențiale cu cod FTTB și echipamente de acces
+- **📡 Camereta**: Cabine tehnice de distribuție cu observații și ID tabelă
+- **📦 Enclosure**: Închideri tehnice pentru echipamente cu ID și observații
+- **🌐 Hub**: Hub-uri de rețea cu nume și localitate pentru distribuție
+- **🏘️ Localitati**: Localități cu nume, comună și cod SIRUTA
+- **📶 Stalpi**: Stâlpi utilitari pentru suportul cablurilor cu material și tip
+- **🏢 Zona Hub**: Zone de acoperire hub cu statistici case și apartamente
+- **🔧 Zone Interventie**: Zone de intervenție cu localitate și zonă de acoperire
+- **🔌 Spliter**: Divizoare de semnal (splitere) cu tip și număr de porturi
+- **📡 Zona PON**: Zone Passive Optical Network cu identificatori
+- **📶 Zona Spliter**: Zone de distribuție cu ID zonă pentru splitere
+- **🌐 Fibra**: Fibre optice cu număr fire și localitate pentru conectivitate
+- **🏢 Scari**: Scări cu cod FTTB și articole pentru acces la clădiri
+- **📡 Zona PON RE FTTH1000**: Zone PON Realizate FTTH1000 pentru acces la 1Gbps
+- **🔍 Search Layers**: Sisteme de căutare FTTB, scări, camerete, închideri pentru identificare
 
-**Scopul**: Automatizarea procesării datelor geografice pentru telecom infrastructure, cu validare automată, detectare duplicat și generare rezultate standardizate.
+**Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de rețele de fibră optică, cu validare automată, detectare duplicat și generare rezultate standardizate pentru managementul rețelelor de telecomunicații.
 
 ## 🚀 Pornire Rapidă
 

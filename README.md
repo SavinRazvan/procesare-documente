@@ -26,6 +26,7 @@ conda activate proc_doc
 
 # (Opțional) Instalare dependențe
 pip install -r requirements.txt
+```
 
 
 ---
@@ -90,6 +91,7 @@ Rezultate centralizate într-o structură uniformă
 
 📁 Structura proiectului
 
+```python
 procesare-documente/
 ├── _input/                    # Fișiere GeoJSON sursă
 ├── _output/                   # Rezultate procesate
@@ -106,6 +108,8 @@ procesare-documente/
 ├── requirements.txt           # Dependențe
 ├── TUTORIAL.md                # Ghid de utilizare
 └── README.md                  # Acest fișier
+
+```
 
 > Pentru detalii suplimentare despre funcționare și configurare, vezi TUTORIAL.md.
 
@@ -184,6 +188,7 @@ Scalabil pentru mii de entități
 
 🧪 Dezvoltare și testare
 
+```bash
 # Testare procesor individual
 python3 _camereta.py _input _output
 
@@ -193,6 +198,7 @@ python3 _process_all.py _input _output --models camereta
 # Afișare opțiuni disponibile
 python3 _process_all.py --help
 
+```
 
 ---
 

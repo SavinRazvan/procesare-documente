@@ -2,6 +2,18 @@
 
 > Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare rezultate centralizate.
 
+## 🎯 Ce Sunt Aceste Procesoare?
+
+Acest sistem conține **18 procesoare specializați** pentru procesarea automată a fișierelor GeoJSON din infrastructura de telecomunicații. Fiecare procesor gestionează un tip specific de elemente tehnice:
+
+- **🏠 Case & Locuințe**: Procesare date despre case, apartamente și locuințe
+- **📡 Infrastructură Tehnică**: Cabine tehnice, camerete, enclosures și hub-uri
+- **🔌 Rețele de Comunicare**: Fibre optice, splitere, stalpi și zone de acoperire
+- **📍 Localizare**: Localități, zone de intervenție și zone PON
+- **🔍 Căutare Avansată**: Sisteme de căutare pentru toate tipurile de elemente
+
+**Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de telecomunicații, cu validare automată, detectare duplicat și generare rezultate standardizate.
+
 ## 🚀 Pornire Rapidă
 
 ```bash
@@ -18,7 +30,7 @@ python3 _process_all.py _input _output
 
 ## 📋 Funcționalități
 
-- **23 Procesori Specializați**: Gestionează tipuri specifice de modele
+- **18 Procesori Specializați**: Gestionează tipuri specifice de modele
 - **Procesor Principal**: Orchestrează toți procesorii specializați
 - **Configurare prin JSON**: Definiții de modele bazate pe fișiere JSON
 - **Logging Profesional**: Gestionare comprehensivă a erorilor și monitorizare

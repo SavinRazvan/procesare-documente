@@ -4,15 +4,15 @@
 
 ## 🎯 Ce Sunt Aceste Procesoare?
 
-Acest sistem conține **18 procesoare specializați** pentru procesarea automată a fișierelor GeoJSON din infrastructura de telecomunicații. Fiecare procesor gestionează un tip specific de elemente tehnice:
+Acest sistem conține **18 procesoare specializați** pentru procesarea automată a fișierelor GeoJSON din telecom infrastructure. Fiecare procesor gestionează un tip specific de elemente tehnice:
 
-- **🏠 Case & Locuințe**: Procesare date despre case, apartamente și locuințe
-- **📡 Infrastructură Tehnică**: Cabine tehnice, camerete, enclosures și hub-uri
-- **🔌 Rețele de Comunicare**: Fibre optice, splitere, stalpi și zone de acoperire
-- **📍 Localizare**: Localități, zone de intervenție și zone PON
-- **🔍 Căutare Avansată**: Sisteme de căutare pentru toate tipurile de elemente
+- **🏠 Case & Housing**: Procesare date despre case, apartamente și locuințe
+- **📡 Technical Infrastructure**: Cabine tehnice, camerete, enclosures și hub-uri
+- **🔌 Communication Networks**: Fibre optice, splitere, stalpi și zone de acoperire
+- **📍 Location Services**: Localități, zone de intervenție și zone PON
+- **🔍 Advanced Search**: Sisteme de căutare pentru toate tipurile de elemente
 
-**Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de telecomunicații, cu validare automată, detectare duplicat și generare rezultate standardizate.
+**Scopul**: Automatizarea procesării datelor geografice pentru telecom infrastructure, cu validare automată, detectare duplicat și generare rezultate standardizate.
 
 ## 🚀 Pornire Rapidă
 
@@ -46,7 +46,7 @@ procesare-documente/
 ├── config/                    # Fișiere de configurare
 ├── src/                       # Motor de procesare principal
 ├── _process_all.py            # Procesor principal
-├── _[model].py               # Procesori specializați (23 fișiere)
+├── _[model].py               # Procesori specializați (18 fișiere)
 └── README.md                  # Acest fișier
 ```
 
@@ -66,13 +66,13 @@ procesare-documente/
 
 ## 📊 Modele Suportate
 
-### Straturi Principale (14)
+### Main Layers (14)
 - `camereta`, `enclosure`, `hub`, `localitati`, `stalpi`
 - `zona_hub`, `zone_interventie`, `case`, `spliter`
 - `zona_pon`, `zona_spliter`, `fibra`, `scari`
 - `zona_pon_re_ftth1000`
 
-### Straturi de Căutare (4)
+### Search Layers (4)
 - `fttb_search`, `scari_search`, `camereta_search`, `enclosure_search`
 
 ## 🎯 Exemple de Utilizare
@@ -88,12 +88,12 @@ python3 _process_all.py _input _output --no-duplicates
 python3 _camereta.py _input _output
 ```
 
-## 📈 Performanță
+## 📈 Performance
 
-- **Ușor**: Fără dependențe externe
-- **Rapid**: Optimizat pentru seturi mari de date
-- **Eficient la Memorie**: Procesare în flux
-- **Scalabil**: Gestionează mii de entități
+- **Lightweight**: Fără dependențe externe
+- **Fast**: Optimizat pentru seturi mari de date
+- **Memory Efficient**: Procesare în flux
+- **Scalable**: Gestionează mii de entități
 
 ## 🛠️ Dezvoltare
 
@@ -108,7 +108,7 @@ python3 _process_all.py _input _output --models camereta
 python3 _process_all.py --help
 ```
 
-## 📞 Suport
+## 📞 Support
 
 Pentru probleme sau întrebări:
 1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare

@@ -1,144 +1,209 @@
-# Procesor GeoJSON V2 - Fiber Optic Networks Manager
+Procesor GeoJSON V2 – Fiber Optic Networks Manager
 
-> Sistem profesional de procesare documente pentru fișiere GeoJSON cu validare comprehensivă a datelor, detectare duplicat și generare rezultate centralizate pentru infrastructura de rețele de telecomunicații.
+> Sistem de procesare a fișierelor GeoJSON pentru infrastructura de rețele de fibră optică. Include validare a datelor, identificare de duplicate și generare de rezultate standardizate pentru gestionarea informațiilor geografice.
 
-## 🎯 Proiectul Fiber Optic Networks Manager
 
-Acest sistem face parte din proiectul **Fiber Optic Networks Manager** - o soluție completă pentru managementul infrastructurii de rețele de fibră optică. Sistemul procesează datele geografice ale elementelor de rețea pentru a oferi o vizibilitate completă asupra infrastructurii de telecomunicații.
-
-## 🎯 Ce Sunt Aceste Procesoare?
-
-Acest sistem conține **18 procesoare specializate** pentru procesarea automată a fișierelor GeoJSON din infrastructura de rețele de telecomunicații. Fiecare procesor gestionează un tip specific de elemente tehnice din rețelele de fibră optică:
-
-- **🏠 Case**: Clădiri rezidențiale cu cod FTTB și echipamente de acces
-- **📡 Camereta**: Cabine tehnice de distribuție cu observații și ID tabelă
-- **📦 Enclosure**: Închideri tehnice pentru echipamente cu ID și observații
-- **🌐 Hub**: Hub-uri de rețea cu nume și localitate pentru distribuție
-- **🏘️ Localitati**: Localități cu nume, comună și cod SIRUTA
-- **📶 Stalpi**: Stâlpi utilitari pentru suportul cablurilor cu material și tip
-- **🏢 Zona Hub**: Zone de acoperire hub cu statistici case și apartamente
-- **🔧 Zone Interventie**: Zone de intervenție cu localitate și zonă de acoperire
-- **🔌 Spliter**: Divizoare de semnal (splitere) cu tip și număr de porturi
-- **📡 Zona PON**: Zone Passive Optical Network cu identificatori
-- **📶 Zona Spliter**: Zone de distribuție cu ID zonă pentru splitere
-- **🌐 Fibra**: Fibre optice cu număr fire și localitate pentru conectivitate
-- **🏢 Scari**: Scări cu cod FTTB și articole pentru acces la clădiri
-- **📡 Zona PON RE FTTH1000**: Zone PON Realizate FTTH1000 pentru acces la 1Gbps
-- **🔍 Search Layers**: Sisteme de căutare FTTB, scări, camerete, închideri pentru identificare
-
-**Scopul**: Automatizarea procesării datelor geografice pentru infrastructura de rețele de fibră optică, cu validare automată, detectare duplicat și generare rezultate standardizate pentru managementul rețelelor de telecomunicații.
-
-## 🚀 Pornire Rapidă
-
-```bash
-# Configurare mediu
-conda create -n .proc_doc python=3.11 -y
-conda activate .proc_doc
-
-# Navigare la proiect
-cd /home/razvansavin/Projects/procesare-documente
-
-# Procesare toate modelele
-python3 _process_all.py _input _output
-```
-
-## 📋 Funcționalități
-
-- **18 Procesori Specializați**: Gestionează tipuri specifice de modele
-- **Procesor Principal**: Orchestrează toți procesorii specializați
-- **Configurare prin JSON**: Definiții de modele bazate pe fișiere JSON
-- **Logging Profesional**: Gestionare comprehensivă a erorilor și monitorizare
-- **Fără Dependențe Externe**: Doar biblioteca standard Python
-- **Rezultate Centralizate**: Date procesate unificate
-
-## 📁 Structura Proiectului
-
-```
-procesare-documente/
-├── _input/                    # Fișiere GeoJSON sursă
-├── _output/                   # Fișiere rezultat procesare
-├── config/                    # Fișiere de configurare
-│   ├── models.json           # Configurația modelelor (18 modele)
-│   └── settings.json         # Setările de procesare
-├── src/                       # Motor de procesare principal
-│   ├── core/                  # Componente principale
-│   └── utils/                 # Utilitare sistem
-├── logs/                      # Fișiere log sistem
-├── _process_all.py            # Procesor principal
-├── _[model].py               # Procesori specializați (18 fișiere)
-├── doc_input_headers.md      # Documentație câmpuri
-├── requirements.txt           # Dependențe sistem
-├── TUTORIAL.md               # Ghid complet utilizator
-└── README.md                 # Acest fișier
-```
-
-> **Pentru o prezentare detaliată a arhitecturii, vezi [TUTORIAL.md](TUTORIAL.md)**
-
-## 📚 Documentație
-
-- **[TUTORIAL.md](TUTORIAL.md)** - Ghid complet utilizator cu instrucțiuni de configurare
-- **[doc_input_headers.md](doc_input_headers.md)** - Specificații câmpuri și referință tehnică
-- **[requirements.txt](requirements.txt)** - Informații despre dependențe
-
-## 🔧 Cerințe
-
-- **Python**: 3.11+
-- **Conda**: Pentru gestionarea mediului
-- **Fără Dependențe Externe**: Folosește doar biblioteca standard Python
-
-## 📊 Modele Suportate
-
-### Main Layers (14)
-- `camereta`, `enclosure`, `hub`, `localitati`, `stalpi`
-- `zona_hub`, `zone_interventie`, `case`, `spliter`
-- `zona_pon`, `zona_spliter`, `fibra`, `scari`
-- `zona_pon_re_ftth1000`
-
-### Search Layers (4)
-- `fttb_search`, `scari_search`, `camereta_search`, `enclosure_search`
-
-## 🎯 Exemple de Utilizare
-
-```bash
-# Procesare modele specifice
-python3 _process_all.py _input _output --models camereta case
-
-# Procesare fără detectare duplicat
-python3 _process_all.py _input _output --no-duplicates
-
-# Procesor specializat
-python3 _camereta.py _input _output
-```
-
-## 📈 Performance
-
-- **Lightweight**: Fără dependențe externe
-- **Fast**: Optimizat pentru seturi mari de date
-- **Memory Efficient**: Procesare în flux
-- **Scalable**: Gestionează mii de entități
-
-## 🛠️ Dezvoltare
-
-```bash
-# Testare procesor specializat
-python3 _camereta.py _input _output
-
-# Testare procesor principal
-python3 _process_all.py _input _output --models camereta
-
-# Verificare ajutor
-python3 _process_all.py --help
-```
-
-## 📞 Support
-
-Pentru probleme sau întrebări:
-1. Verifică [TUTORIAL.md](TUTORIAL.md) pentru instrucțiuni de utilizare și configurare
-2. Revizuiește [doc_input_headers.md](doc_input_headers.md) pentru specificații câmpuri
-3. Verifică rezultatele consolei pentru mesaje de eroare
-4. Verifică formatele fișierelor sursă și denumirile
 
 ---
 
-**Autor**: Savin Ionut Razvan  
-**Versiune**: 2025.10.05  
+🗺️ Descriere generală
+
+Proiectul Fiber Optic Networks Manager oferă un set de instrumente pentru procesarea datelor geografice asociate elementelor din rețelele de telecomunicații.
+Acest modul gestionează fișierele GeoJSON care descriu infrastructura fizică (clădiri, stâlpi, fibre, zone de acoperire etc.), aplicând reguli de validare și filtrare automată.
+
+
+---
+
+⚙️ Componentele procesorului
+
+Sistemul include 18 procesoare dedicate, fiecare destinat unui tip specific de obiect din rețea.
+Fiecare procesor rulează independent sau coordonat printr-un procesor principal.
+
+Tip element	Descriere generală
+
+🏠 Case	Clădiri rezidențiale cu cod FTTB și echipamente asociate
+📡 Camereta	Puncte tehnice de distribuție
+📦 Enclosure	Închideri tehnice pentru echipamente
+🌐 Hub	Hub-uri de rețea cu informații despre localitate
+🏘️ Localitati	Localități, comune și coduri SIRUTA
+📶 Stalpi	Stâlpi utilitari (tip, material)
+🏢 Zona Hub	Zone de acoperire pentru fiecare hub
+🔧 Zone Interventie	Zone de intervenție și acoperire
+🔌 Spliter	Splittere optice (tip, porturi)
+📡 Zona PON	Zone Passive Optical Network
+📶 Zona Spliter	Zone de distribuție pentru splittere
+🌐 Fibra	Tronsoane de fibră optică
+🏢 Scari	Accese la clădiri (FTTB)
+📡 Zona PON RE FTTH1000	Zone PON realizate FTTH1000
+🔍 Search Layers	Layere pentru căutare (FTTB, scări, camerete, închideri)
+
+
+Scop: automatizarea procesării și validării datelor geografice din infrastructura de telecomunicații, cu rezultate centralizate și coerente.
+
+
+---
+
+🚀 Pornire rapidă
+
+# Creare și activare mediu virtual
+conda create -n proc_doc python=3.11 -y
+conda activate proc_doc
+
+# Navigare în directorul proiectului
+cd /home/razvansavin/Projects/procesare-documente
+
+# Procesare completă
+python3 _process_all.py _input _output
+
+
+---
+
+📋 Funcționalități principale
+
+18 procesoare specializate pentru modele distincte
+
+Procesor principal pentru execuție unificată
+
+Configurare JSON pentru modele și setări
+
+Sistem de logging pentru monitorizare și depanare
+
+Fără dependențe externe, bazat pe biblioteca standard Python
+
+Rezultate centralizate într-o structură uniformă
+
+
+
+---
+
+📁 Structura proiectului
+
+procesare-documente/
+├── _input/                    # Fișiere GeoJSON sursă
+├── _output/                   # Rezultate procesate
+├── config/                    # Configurații generale
+│   ├── models.json
+│   └── settings.json
+├── src/                       # Cod sursă principal
+│   ├── core/
+│   └── utils/
+├── logs/                      # Fișiere log
+├── _process_all.py            # Procesor principal
+├── _[model].py                # Procesoare dedicate (18 fișiere)
+├── doc_input_headers.md       # Descriere câmpuri de intrare
+├── requirements.txt           # Dependențe
+├── TUTORIAL.md                # Ghid de utilizare
+└── README.md                  # Acest fișier
+
+> Pentru detalii suplimentare despre funcționare și configurare, vezi TUTORIAL.md
+
+
+
+
+---
+
+📚 Documentație
+
+TUTORIAL.md – Ghid de utilizare și configurare
+
+doc_input_headers.md – Descriere câmpuri de intrare
+
+requirements.txt – Dependențe și versiuni Python
+
+
+
+---
+
+🔧 Cerințe de sistem
+
+Python 3.11+
+
+Conda pentru gestionarea mediului
+
+Nu sunt necesare pachete externe — folosește doar biblioteca standard Python
+
+
+
+---
+
+🧩 Modele suportate
+
+Layere principale (14)
+
+camereta, enclosure, hub, localitati, stalpi,
+zona_hub, zone_interventie, case, spliter,
+zona_pon, zona_spliter, fibra, scari,
+zona_pon_re_ftth1000
+
+Layere de căutare (4)
+
+fttb_search, scari_search, camereta_search, enclosure_search
+
+
+---
+
+💻 Exemple de utilizare
+
+# Procesare modele specifice
+python3 _process_all.py _input _output --models camereta case
+
+# Procesare fără verificare duplicate
+python3 _process_all.py _input _output --no-duplicates
+
+# Rulare procesor individual
+python3 _camereta.py _input _output
+
+
+---
+
+⚙️ Performanță
+
+Fără dependențe externe
+
+Optimizat pentru volume mari de date
+
+Procesare în flux pentru eficiență de memorie
+
+Scalabil pentru mii de entități
+
+
+
+---
+
+🧪 Dezvoltare și testare
+
+# Testare procesor individual
+python3 _camereta.py _input _output
+
+# Testare orchestrare
+python3 _process_all.py _input _output --models camereta
+
+# Afișare opțiuni disponibile
+python3 _process_all.py --help
+
+
+---
+
+📞 Suport
+
+Pentru depanare sau întrebări:
+
+1. Consultă TUTORIAL.md pentru ghid complet
+
+
+2. Verifică doc_input_headers.md pentru câmpurile suportate
+
+
+3. Analizează mesajele din consolă și fișierele log
+
+
+4. Asigură-te că denumirile și formatele fișierelor sursă sunt corecte
+
+
+
+
+---
+
+Autor: Savin Ionuț Răzvan
+Versiune: 2025.10.05
+

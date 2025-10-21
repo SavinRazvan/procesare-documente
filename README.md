@@ -21,21 +21,21 @@ Fiecare procesor rulează independent sau coordonat printr-un procesor principal
 
 Tip element	Descriere generală
 
-🏠 Case	Clădiri rezidențiale cu cod FTTB și echipamente asociate
-📡 Camereta	Puncte tehnice de distribuție
-📦 Enclosure	Închideri tehnice pentru echipamente
-🌐 Hub	Hub-uri de rețea cu informații despre localitate
-🏘️ Localitati	Localități, comune și coduri SIRUTA
-📶 Stalpi	Stâlpi utilitari (tip, material)
-🏢 Zona Hub	Zone de acoperire pentru fiecare hub
-🔧 Zone Interventie	Zone de intervenție și acoperire
-🔌 Spliter	Splittere optice (tip, porturi)
-📡 Zona PON	Zone Passive Optical Network
-📶 Zona Spliter	Zone de distribuție pentru splittere
-🌐 Fibra	Tronsoane de fibră optică
-🏢 Scari	Accese la clădiri (FTTB)
-📡 Zona PON RE FTTH1000	Zone PON realizate FTTH1000
-🔍 Search Layers	Layere pentru căutare (FTTB, scări, camerete, închideri)
+- 🏠 Case	Clădiri rezidențiale cu cod FTTB și echipamente asociate
+- 📡 Camereta	Puncte tehnice de distribuție
+- 📦 Enclosure	Închideri tehnice pentru echipamente
+- 🌐 Hub	Hub-uri de rețea cu informații despre localitate
+- 🏘️ Localitati	Localități, comune și coduri SIRUTA
+- 📶 Stalpi	Stâlpi utilitari (tip, material)
+- 🏢 Zona Hub	Zone de acoperire pentru fiecare hub
+- 🔧 Zone Interventie	Zone de intervenție și acoperire
+- 🔌 Spliter	Splittere optice (tip, porturi)
+- 📡 Zona PON	Zone Passive Optical Network
+- 📶 Zona Spliter	Zone de distribuție pentru splittere
+- 🌐 Fibra	Tronsoane de fibră optică
+- 🏢 Scari	Accese la clădiri (FTTB)
+- 📡 Zona PON RE FTTH1000	Zone PON realizate FTTH1000
+- 🔍 Search Layers	Layere pentru căutare (FTTB, scări, camerete, închideri)
 
 
 Scop: automatizarea procesării și validării datelor geografice din infrastructura de telecomunicații, cu rezultate centralizate și coerente.

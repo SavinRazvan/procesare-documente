@@ -142,4 +142,4 @@ Pentru probleme sau întrebări:
 ---
 
 **Autor**: Savin Ionut Razvan  
-**Versiune**: 2025.10.05  
+**Versiune**: 2025.10.05

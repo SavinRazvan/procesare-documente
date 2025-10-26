@@ -13,7 +13,8 @@ Features:
 - Advanced error handling and performance logging
 
 Author: Savin Ionut Razvan
-Version: 2025.10.20
+Version: 2.1
+Date: 26.10.2025
 """
 
 import sys

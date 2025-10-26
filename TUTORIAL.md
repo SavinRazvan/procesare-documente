@@ -4,37 +4,116 @@
 
 Acest ghid acoperă utilizarea sistemului Procesor GeoJSON V2 pentru procesarea diferitelor tipuri de date de infrastructură de rețea. Sistemul suportă **18 tipuri diferite de modele** pentru atât straturile principale cât și operațiunile de căutare.
 
+## 📁 Structura de Input
+
+Aplicația așteaptă următoarea structură de date pentru procesare:
+
+```
+📦_input
+ ┣ 📂Case_map
+ ┃ ┣ 📜CASE_1_DECEMBRIE.geojson
+ ┃ ┣ 📜CASE_ALBESTI.geojson
+ ┃ ┣ 📜CASE_BARLAD.geojson
+ ┃ ┣ 📜CASE_VASLUI.geojson
+ ┃ ┗ 📜... (fișiere CASE_*.geojson)
+ ┣ 📂layere_map
+ ┃ ┣ 📂Scari
+ ┃ ┃ ┣ 📜SCARI_BARLAD.geojson
+ ┃ ┃ ┣ 📜SCARI_HUSI.geojson
+ ┃ ┃ ┗ 📜... (fișiere SCARI_*.geojson)
+ ┃ ┣ 📂Spliter_Realizat
+ ┃ ┃ ┣ 📜SPLITER_REALIZAT_BARLAD.geojson
+ ┃ ┃ ┣ 📜SPLITER_REALIZAT_VASLUI.geojson
+ ┃ ┃ ┗ 📜... (fișiere SPLITER_REALIZAT_*.geojson)
+ ┃ ┣ 📂Unified_layer
+ ┃ ┃ ┣ 📜CAMERETA_REALIZAT_VS.geojson
+ ┃ ┃ ┣ 📜ENCLOSURE_REALIZAT_VS.geojson
+ ┃ ┃ ┣ 📜HUB_VS.geojson
+ ┃ ┃ ┣ 📜LOCALITATI_VS.geojson
+ ┃ ┃ ┣ 📜STALPI_VS.geojson
+ ┃ ┃ ┗ 📜... (fișiere unified)
+ ┃ ┣ 📂Zona_Pon
+ ┃ ┃ ┣ 📜ZONA_PON_REALIZAT_BARLAD.geojson
+ ┃ ┃ ┣ 📜ZONA_PON_REALIZAT_VASLUI.geojson
+ ┃ ┃ ┗ 📜... (fișiere ZONA_PON_REALIZAT_*.geojson)
+ ┃ ┣ 📂Zona_Pon_FTTH
+ ┃ ┃ ┣ 📜ZONA_PON_RE_FTTH1000_BARLAD.geojson
+ ┃ ┃ ┣ 📜ZONA_PON_RE_FTTH1000_HUSI.geojson
+ ┃ ┃ ┗ 📜... (fișiere ZONA_PON_RE_FTTH1000_*.geojson)
+ ┃ ┗ 📂Zona_Spliter
+ ┃ ┃ ┣ 📜ZONA_SPLITER_REALIZAT_BARLAD.geojson
+ ┃ ┃ ┣ 📜ZONA_SPLITER_REALIZAT_VASLUI.geojson
+ ┃ ┃ ┗ 📜... (fișiere ZONA_SPLITER_REALIZAT_*.geojson)
+ ┗ 📜Log_*.txt (fișiere de log opționale)
+```
+
+## 📤 Structura de Output
+
+Aplicația generează următoarea structură de date procesate:
+
+```
+📦_output
+ ┣ 📂case
+ ┃ ┣ 📜CASE_1_DECEMBRIE.geojson
+ ┃ ┣ 📜CASE_ALBESTI.geojson
+ ┃ ┣ 📜CASE_BARLAD.geojson
+ ┃ ┣ 📜CASE_VASLUI.geojson
+ ┃ ┣ 📜... (fișiere procesate individual)
+ ┃ ┣ 📜case_centralized.geojson
+ ┃ ┗ 📜manifest.json
+ ┣ 📜camereta_centralized.geojson
+ ┣ 📜camereta_search.geojson
+ ┣ 📜enclosure_centralized.geojson
+ ┣ 📜enclosure_search.geojson
+ ┣ 📜fibra_centralized.geojson
+ ┣ 📜fttb_search.geojson
+ ┣ 📜hub_centralized.geojson
+ ┣ 📜localitati_centralized.geojson
+ ┣ 📜scari_centralized.geojson
+ ┣ 📜scari_search.geojson
+ ┣ 📜spliter_centralized.geojson
+ ┣ 📜stalpi_centralized.geojson
+ ┣ 📜zona_hub_centralized.geojson
+ ┣ 📜zona_pon_centralized.geojson
+ ┣ 📜zona_pon_re_ftth1000_centralized.geojson
+ ┣ 📜zona_spliter_centralized.geojson
+ ┗ 📜zone_interventie_centralized.geojson
+```
+> Tot ce iese din input pui direct in aplicatie in data folder. Daca ai date de calitate -> creste eficienta pe teren pentru echipele de instalatori, service si fibra.
+
+
 ## 🏗️ Arhitectura Sistemului
 
 ### Componente Principale
-- **Procesoare Specializate**: Procesează tipuri specifice de modele cu anteturi standardizate
-- **Procesor Principal**: Orchestrează toate procesoarele specializate
-- **Configurația Modelelor**: Definește regulile de detectare și maparea câmpurilor
-- **Procesarea Centralizată**: Creează fișiere rezultat unificate per tip de model
+- **Procesoare Specializate**: Procesează tipuri specifice de modele cu anteturi standardizate și curățare automată a datelor
+- **Procesor Principal**: Orchestrează toate procesoarele specializate prin subprocess-uri
+- **Configurația Modelelor**: Definește regulile de detectare și maparea câmpurilor cu validări specifice
+- **Procesarea Centralizată**: Creează fișiere rezultat unificate per tip de model cu manifest.json pentru Case
+- **Standardizare și Curățare**: Elimină intrările neconforme și validează câmpuri obligatorii
 
 ### Tipuri de Modele
 
-#### Straturi Principale (14 modele)
-- `camereta` - Cabină Tehnică
-- `enclosure` - Închidere Tehnică  
-- `hub` - Hub de Rețea
-- `localitati` - Localități
-- `stalpi` - Stâlpi Utilitari
-- `zona_hub` - Zona de Acoperire Hub
-- `zone_interventie` - Zona de Intervenție
-- `case` - Clădire Rezidențială
-- `spliter` - Divizor de Semnal
-- `zona_pon` - Zona PON
-- `zona_spliter` - Zona Divizor
-- `fibra` - Fibră Optică
-- `scari` - Scări
-- `zona_pon_re_ftth1000` - Zona PON RE FTTH1000
+#### Straturi Principale (14 procesoare)
+- `case` - Clădiri rezidențiale cu infrastructură FTTB (poligoane)
+- `camereta` - Cabine tehnice de distribuție cu identificatori unici
+- `enclosure` - Închideri tehnice pentru echipamente
+- `fibra` - Fibre optice cu specificații tehnice și măsurători
+- `hub` - Hub-uri de rețea cu specificații tehnice complete
+- `localitati` - Localități cu statistici de acoperire și informații administrative
+- `scari` - Scări de bloc cu infrastructură FTTB completă (poligoane)
+- `spliter` - Splitere optice cu specificații tehnice (puncte)
+- `stalpi` - Stâlpi utilitari cu specificații tehnice și proprietate
+- `zona_hub` - Zone de acoperire hub cu statistici detaliate
+- `zone_interventie` - Zone de intervenție cu echipe și responsabilități
+- `zona_pon` - Zone Passive Optical Network cu identificatori
+- `zona_pon_re_ftth1000` - Zone PON Realizate cu tehnologia FTTH1000
+- `zona_spliter` - Zone de distribuție pentru splitere
 
-#### Straturi de Căutare (4 modele)
-- `fttb_search` - Căutare FTTB
-- `scari_search` - Căutare Scări
-- `camereta_search` - Căutare Cameră
-- `enclosure_search` - Căutare Închidere
+#### Straturi de Căutare (4 procesoare)
+- `fttb_search` - Sistem de căutare pentru combinații COD_FTTB + LOCALITATE cu categorizare automată
+- `scari_search` - Sistem de căutare pentru date scări cu set complet de câmpuri și validare strictă
+- `camereta_search` - Sistem de căutare pentru camerete cu LOCALITATE și ID_TABELA
+- `enclosure_search` - Sistem de căutare pentru închideri cu ENCLOSURE_ID și LOCALITATE
 
 ## 🚀 Început Rapid
 
@@ -135,7 +214,7 @@ python3 _camereta.py _input _output
 python3 _camereta.py _input _output --no-duplicates
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `camereta_centralized.geojson`
+- **Doar fișier centralizat**: `_output/camereta_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `CAMERETA_` în nume
 
 #### 2. Procesor Case
@@ -145,15 +224,17 @@ python3 _case.py _input _output
 ```
 **Rezultat**: 
 - **Fișiere individuale**: `case/CASE_*.geojson` (compact format)
-- **Manifest**: `case/manifest.json`
+- **Fișier centralizat**: `_output/case_centralized.geojson`
+- **Manifest**: `case/manifest.json` (cu prioritizare BARLAD, VASLUI)
 - **Filtrare**: Doar fișiere cu `CASE_` în nume
+- **Standardizare**: Elimină intrările neconforme
 
 #### 3. Procesor Enclosure
 ```bash
 python3 _enclosure.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `enclosure_centralized.geojson`
+- **Doar fișier centralizat**: `_output/enclosure_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ENCLOSURE_` în nume
 
 #### 4. Procesor Hub
@@ -161,7 +242,7 @@ python3 _enclosure.py _input _output
 python3 _hub.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `hub_centralized.geojson`
+- **Doar fișier centralizat**: `_output/hub_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `HUB_` în nume
 
 #### 5. Procesor Localitati
@@ -169,7 +250,7 @@ python3 _hub.py _input _output
 python3 _localitati.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `localitati_centralized.geojson`
+- **Doar fișier centralizat**: `_output/localitati_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `LOCALITATI_` în nume
 
 #### 6. Procesor Stalpi
@@ -177,7 +258,7 @@ python3 _localitati.py _input _output
 python3 _stalpi.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `stalpi_centralized.geojson`
+- **Doar fișier centralizat**: `_output/stalpi_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `STALPI_` în nume
 
 #### 7. Procesor Zona Hub
@@ -185,7 +266,7 @@ python3 _stalpi.py _input _output
 python3 _zona_hub.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `zona_hub_centralized.geojson`
+- **Doar fișier centralizat**: `_output/zona_hub_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_ACOPERIRE_HUB_` în nume
 
 #### 8. Procesor Zone Interventie
@@ -193,7 +274,7 @@ python3 _zona_hub.py _input _output
 python3 _zone_interventie.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `zone_interventie_centralized.geojson`
+- **Doar fișier centralizat**: `_output/zone_interventie_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_` sau `ZONE_` în nume
 
 #### 9. Procesor Spliter
@@ -201,7 +282,7 @@ python3 _zone_interventie.py _input _output
 python3 _spliter.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `spliter_centralized.geojson`
+- **Doar fișier centralizat**: `_output/spliter_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `SPLITER_` în nume
 
 #### 10. Procesor Zona PON
@@ -209,7 +290,7 @@ python3 _spliter.py _input _output
 python3 _zona_pon.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `zona_pon_centralized.geojson`
+- **Doar fișier centralizat**: `_output/zona_pon_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_PON_REALIZAT_` în nume
 
 #### 11. Procesor Zona Spliter
@@ -217,7 +298,7 @@ python3 _zona_pon.py _input _output
 python3 _zona_spliter.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `zona_spliter_centralized.geojson`
+- **Doar fișier centralizat**: `_output/zona_spliter_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_SPLITER_REALIZAT_` în nume
 
 #### 12. Procesor Fibra
@@ -225,7 +306,7 @@ python3 _zona_spliter.py _input _output
 python3 _fibra.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `fibra_centralized.geojson`
+- **Doar fișier centralizat**: `_output/fibra_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `FO_` în nume
 
 #### 13. Procesor Scari
@@ -233,7 +314,7 @@ python3 _fibra.py _input _output
 python3 _scari.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `scari_centralized.geojson`
+- **Doar fișier centralizat**: `_output/scari_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `SCARI_` în nume
 
 #### 14. Procesor Zona PON RE FTTH1000
@@ -241,7 +322,7 @@ python3 _scari.py _input _output
 python3 _zona_pon_re_ftth1000.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `zona_pon_re_ftth1000_centralized.geojson`
+- **Doar fișier centralizat**: `_output/zona_pon_re_ftth1000_centralized.geojson`
 - **Filtrare**: Doar fișiere cu `ZONA_PON_RE_FTTH1000_` în nume
 
 ### Procesoare Strat de Căutare
@@ -251,34 +332,38 @@ python3 _zona_pon_re_ftth1000.py _input _output
 python3 _fttb_search.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `fttb_search.geojson`
+- **Doar fișier centralizat**: `_output/fttb_search.geojson`
+- **Categorizare automată**: Case, Scari, Other pe baza TIP_ART și numele fișierului
+- **Standardizare**: Elimină intrările neconforme
 
 #### 2. Procesor Scari Search
 ```bash
 python3 _scari_search.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `scari_search.geojson`
+- **Doar fișier centralizat**: `_output/scari_search.geojson`
+- **Validare strictă**: Câmpuri obligatorii complete
+- **Standardizare**: Elimină intrările cu câmpuri obligatorii goale
 
 #### 3. Procesor Camereta Search
 ```bash
 python3 _camereta_search.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `camereta_search.geojson`
+- **Doar fișier centralizat**: `_output/camereta_search.geojson`
 
 #### 4. Procesor Enclosure Search
 ```bash
 python3 _enclosure_search.py _input _output
 ```
 **Rezultat**: 
-- **Doar fișier centralizat**: `enclosure_search.geojson`
+- **Doar fișier centralizat**: `_output/enclosure_search.geojson`
 
 ## 🎯 Utilizarea Procesorului Principal
 
 ### Procesează Toate Modelele
 ```bash
-# Procesează toate cele 18 tipuri de modele
+# Procesează toate cele 18 procesoare specializate
 python3 _process_all.py _input _output
 ```
 
@@ -309,7 +394,8 @@ python3 _process_all.py _input _output --models camereta case --no-duplicates
 - **Format**: GeoJSON compact (o singură linie)
 - **Denumire**: `case/CASE_[nume_fisier_original].geojson`
 - **Conținut**: Anteturi standardizate cu doar câmpurile extrase
-- **Manifest**: `case/manifest.json` cu lista fișierelor procesate
+- **Manifest**: `case/manifest.json` cu lista fișierelor procesate și prioritizare (BARLAD, VASLUI)
+- **Standardizare**: Elimină intrările neconforme
 
 ### Fișiere Centralizate (Majoritatea Procesoarelor)
 - **Format**: GeoJSON compact (o singură linie)
@@ -318,15 +404,17 @@ python3 _process_all.py _input _output --models camereta case --no-duplicates
 - **Sortare**: Alfabetică după LOCALITATE
 
 ### Cazuri Speciale
-- **Fișiere case**: Doar fișiere individuale în subdirectorul `case/` cu manifest.json (fără fișier centralizat)
-- **Fișiere căutare**: Optimizate pentru operațiuni de căutare cu câmpuri minime
+- **Fișiere case**: Fișiere individuale în subdirectorul `case/` + fișier centralizat + manifest.json
+- **Fișiere căutare**: Optimizate pentru operațiuni de căutare cu câmpuri minime și categorizare automată
 - **Filtrare avansată**: Toate procesoarele filtrează features cu câmpuri obligatorii goale
+- **Standardizare și curățare**: Elimină intrările neconforme și validează câmpuri obligatorii
+- **Validare strictă**: Validări bazate pe patterns și reguli din models.json pentru procesoarele relevante
 
 ## 🔧 Configurare
 
 ### Managementul Mediului de Execuție
 
-#### Verificarea Mediului de Execuție de Execuție
+#### Verificarea Mediului de Execuție
 ```bash
 # Verifică mediu de execuție activ
 conda info --envs
@@ -360,7 +448,7 @@ conda activate .proc_doc
 - Definește câmpurile necesare pentru detectarea modelelor
 - Specifică câmpurile de extragere pentru rezultate
 - Setează regulile de validare și maparea câmpurilor
-- **18 modele configurate** cu validări specifice
+- **18 procesoare configurate** cu validări specifice
 - **Spliter**: Include câmpul NR_SPLITERE pentru numărul de splitere
 
 ### Setările (`config/settings.json`)
@@ -537,7 +625,7 @@ procesare-documente/
 │       └── logger.py                # Sistem logging
 ├── logs/                            # Fișiere log sistem
 ├── _process_all.py                  # Procesorul principal
-├── _[model].py                      # Procesoare specializate (18 procesoare)
+├── _[model].py                      # Procesoare specializate (18 fișiere)
 ├── doc_input_headers.md             # Documentație câmpuri
 ├── requirements.txt                 # Dependențe sistem
 ├── README.md                        # Documentație principală
@@ -611,6 +699,6 @@ Pentru probleme sau întrebări:
 
 **Have fun! 🚀**
 
-**Versiune**: 2.0  
+**Versiune**: 2.1  
 **Autor**: Savin Ionut Razvan  
-**Data**: 2025.10.20
+**Data**: 2025.01.20

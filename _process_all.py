@@ -3,11 +3,12 @@
 Master Processor - Process All Models
 ====================================
 
-Orchestrates individual processing for all model types.
+Orchestrates individual processing for all 18 specialized model processors.
 Creates both individual processed files and centralized output for each model.
+Includes data standardization, cleaning, and comprehensive validation.
 
 Author: Savin Ionut Razvan
-Version: 2025.10.05
+Version: 2025.01.20
 """
 
 import sys
@@ -31,7 +32,9 @@ class ProcessingResult:
 
 class MasterProcessor:
     """
-    Master processor that orchestrates all specialized model processors
+    Master processor that orchestrates all 18 specialized model processors.
+    Manages data standardization, cleaning, validation, and duplicate detection.
+    Creates centralized output files and individual processed files for each model.
     """
     
     def __init__(self, enable_duplicate_detection: bool = True):
@@ -40,7 +43,7 @@ class MasterProcessor:
         self.results = {}
         self.total_processing_time = 0
         
-        # Define all available processors
+        # Define all 18 specialized processors (14 main + 4 search)
         self.processors = {
             "camereta": "_camereta.py",
             "enclosure": "_enclosure.py", 
@@ -158,7 +161,7 @@ class MasterProcessor:
             )
     
     def process_all_models(self, input_dir: str, output_dir: str, models: List[str] = None) -> Dict[str, ProcessingResult]:
-        """Process all specified models"""
+        """Process all specified models with data standardization and cleaning"""
         if models is None:
             models = list(self.processors.keys())
         
@@ -220,10 +223,10 @@ class MasterProcessor:
         print("=" * 80)
 
 def main():
-    """Main function for processing all models"""
+    """Main function for processing all 18 specialized models with standardization and cleaning"""
     import argparse
     
-    parser = argparse.ArgumentParser(description="Process all model types individually and create centralized output")
+    parser = argparse.ArgumentParser(description="Process all 18 specialized model types with data standardization, cleaning, and centralized output")
     parser.add_argument("input_dir", help="Input directory containing GeoJSON files")
     parser.add_argument("output_dir", help="Output directory for processed files")
     parser.add_argument("--no-duplicates", action="store_true", help="Disable duplicate detection")

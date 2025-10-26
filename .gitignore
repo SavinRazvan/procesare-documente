@@ -82,3 +82,5 @@ logs/
 *.log
 _output/
 _input/
+_synthetic_data/
+_synthetic_data/*

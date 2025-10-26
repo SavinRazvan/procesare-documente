@@ -18,7 +18,7 @@ Version: 2.1
 Date: 26.10.2025
 """
 
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 __author__ = "Savin Ionut Razvan"
 
 from .core.engine import GeoJSONProcessor, ProcessingResult

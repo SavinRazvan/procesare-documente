@@ -701,4 +701,4 @@ Pentru probleme sau întrebări:
 
 **Versiune**: 2.1  
 **Autor**: Savin Ionut Razvan  
-**Data**: 2025.01.20
+**Data**: 26.10.2025

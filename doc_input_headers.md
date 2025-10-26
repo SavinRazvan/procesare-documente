@@ -2,7 +2,7 @@
 
 Acest document oferă o reprezentare precisă a configurațiilor curente de câmpuri și anteturi de ieșire pentru fiecare model de procesor, bazată pe configurația actuală `config/models.json` și comportamentul curent al sistemului.
 
-**Ultima Actualizare:** 2025.01.20  
+**Ultima Actualizare:** 26.10.2025  
 **Autor:** Savin Ionut Razvan  
 **Versiune:** 2.1
 

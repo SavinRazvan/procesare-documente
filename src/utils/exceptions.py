@@ -14,7 +14,7 @@ Features:
 - Professional error handling
 
 Author: Savin Ionut Razvan
-Version: 2025.10.05
+Version: 2.1 - 26.10.2025
 """
 
 from typing import Optional, Dict, Any

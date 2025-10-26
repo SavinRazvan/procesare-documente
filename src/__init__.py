@@ -14,7 +14,7 @@ Features:
 - Extensible plugin system
 
 Author: Savin Ionut Razvan
-Version: 2025.10.05
+Version: 2.1 - 26.10.2025
 """
 
 __version__ = "2.0.0"

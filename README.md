@@ -257,4 +257,5 @@ Pentru probleme sau întrebări:
 ---
 
 **Autor**: Savin Ionut Razvan  
-**Versiune**: 2025.10.05
+**Versiune**: 2.1  
+**Data**: 26.10.2025

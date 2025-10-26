@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "description": "GeoJSON Processor V2 - Model Configuration",
   "models": {
     "camereta": {

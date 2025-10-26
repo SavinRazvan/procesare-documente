@@ -5,7 +5,8 @@
 # No external dependencies are required.
 #
 # Author: Savin Ionut Razvan
-# Version: 2025.10.05
+# Version: 2.1
+# Date: 26.10.2025
 # Python: 3.11+
 
 # Standard library modules used:
